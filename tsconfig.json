@@ -14,13 +14,14 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "outFile": "game.js",
-    "types": ["excalibur"],
-    "paths": {
-      "@/*": ["./*"]
-    },
-    "typeRoots": ["./src/types"]
+    "paths": {"@/*": ["./*"]},
+    "typeRoots": ["./src/types", "./node_modules/phaser/types"]
+    ,
+    "types": [
+        "Phaser"
+    ]
   },
+
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

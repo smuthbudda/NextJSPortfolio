@@ -1,20 +1,16 @@
-import {Actor, Engine} from 'excalibur';
-import React from 'react';
 
-export default function Game(){
-    const actor = new Actor();
-    const game = new Engine({
-        width:800,
-        height:600,
-    })
+import React, { useState, useEffect } from 'react';
 
-    game.start();
 
-    return(
-        <div>
+export default function Game() {
+  const [loading, setLoading] = useState(false);
 
-        </div>
-    );
+  useEffect(() => {
+    setLoading(true)
+  }, []);
+
+
+  return (
+    <div>
+    </div>);
 }
-
-

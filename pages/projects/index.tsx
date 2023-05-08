@@ -10,13 +10,15 @@ type combination = {
   roundness: number;
 }
 
-export default function about() {
+export default function About() {
 
   const [domLoaded, setDomLoaded] = useState(false);
+
+
   useEffect(() => {
     setDomLoaded(true);
     if (window && domLoaded) {
-      const wrapper = document.getElementsByClassName("wrapper")[0];
+      const wrapper = document.getElementsByClassName("wrapper")[0] as HTMLElement;
 
       const rand = (min: number, max: number) => Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -44,8 +46,8 @@ export default function about() {
       setInterval(() => {
         const index = uniqueRand(0, combinations.length - 1, prev),
           combination = combinations[index];
-        wrapper.dataset.configuration = combination.configuration;
-        wrapper.dataset.roundness = combination.roundness;
+        wrapper.dataset.configuration = combination.configuration + "";
+        wrapper.dataset.roundness = combination.roundness + "";
         prev = index;
       }, 3000);
     }
