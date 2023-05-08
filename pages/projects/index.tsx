@@ -9,11 +9,9 @@ type combination = {
   configuration: number;
   roundness: number;
 }
-
-export default function About() {
+const Projects = ()=> {
 
   const [domLoaded, setDomLoaded] = useState(false);
-
 
   useEffect(() => {
     setDomLoaded(true);
@@ -73,3 +71,4 @@ export default function About() {
   )
 }
 
+export default Projects;
