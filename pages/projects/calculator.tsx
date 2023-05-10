@@ -3,6 +3,7 @@ import PointsData from '../../public/WorldAthletics.json';
 import Select from "react-dropdown-select";
 import styles from "../../styles/points.module.css"
 import clsx from 'clsx';
+import { eventNames } from "process";
 
 interface Performance {
     Points: number | null;
@@ -90,15 +91,15 @@ export default function PointsCalculator() {
                     <div >
                         <div>
                             <h3>Event</h3>
-                            <Select options={OutdoorEvents} labelField="Event" placeholder="Event" valueField="Event" onChange={(e) => setEvent(e)} values={OutdoorEvents} />
+                            <Select options={OutdoorEvents} labelField="Event" placeholder="Event" valueField="Event" onChange={(e) => setEvent(e)} values={[]} />
                         </div>
                         <div>
                             <h3>Gender</h3>
-                            <Select options={GenderArr} labelField="Name" placeholder="Gender" valueField="Value" onChange={(e) => setGender(e)} values={GenderArr} />
+                            <Select options={GenderArr} labelField="Name" placeholder="Gender" valueField="Value" onChange={(e) => setGender(e)} values={[]} />
                         </div>
                         <div>
                             <h3>Category</h3>
-                            <Select options={Category} labelField="Name" placeholder="Category" valueField="Value" onChange={(e) => setCategory(e)} disabled={true} values={Category} />
+                            <Select options={Category} labelField="Name" placeholder="Category" valueField="Value" onChange={(e) => setCategory(e)} disabled={true} values={[]} />
                         </div>
                     </div>
                     <div className="points-grid--performance">
@@ -123,7 +124,7 @@ export default function PointsCalculator() {
 
                     </div>
                     <div >
-                        <button type="button" onClick={() => CalculateTotal()}
+                        <button type="button" onClick={() => CalculateTotal()} disabled={event.length == 0 || gender.length == 0 || time.length == 0 || points == undefined}
                         >Calculate</button>
                     </div>
                     <table>
@@ -184,7 +185,7 @@ const PerformanceRow = (props: any, calc = false) => {
                         performance.Event === "100mH" ||
                         performance.Event === "LJ" ||
                         performance.Event === "TJ" ?
-                        <input type="number" onChange={(e) => CalculteWindTime(Number(e.target.value))} max={2.0} min={-2.0} /> :
+                        <input type="number" onChange={(e) => CalculteWindTime(Number(e.target.value))}/> :
                         <></>
                 }
             </td>
