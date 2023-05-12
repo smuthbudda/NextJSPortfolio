@@ -42,7 +42,7 @@ export default function PointsCalculator() {
     const [points, setPoints] = useState<number | null>();
     const [totals, updateTotalArray] = useState<Performance[]>([]);
 
-    const CalculateTotal = () => {
+    const CalculateTotal = async () => {
         var perf: Performance = { Gender: "Undefined", Points: 0, Event: "Undefined", Mark: 0, MarkTime: "Undefined", Category: "Undefined" };
         if (calcPoints) { //caclulate the points based on the performance 
 
@@ -56,7 +56,8 @@ export default function PointsCalculator() {
         } else { //calculate the performance based on the points
             if (points != undefined) {
                 if (points <= 1400 && points >= 0) {
-                    perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
+                    // perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
+                    perf = await findPerformanceAsync(points, gender[0].Name, "outdoor", event[0].Event).finally();
                 }
             }
         }
@@ -185,7 +186,7 @@ const PerformanceRow = (props: any, calc = false) => {
                         performance.Event === "100mH" ||
                         performance.Event === "LJ" ||
                         performance.Event === "TJ" ?
-                        <input type="number" onChange={(e) => CalculteWindTime(Number(e.target.value))}/> :
+                        <input type="number" onChange={(e) => CalculteWindTime(Number(e.target.value))} /> :
                         <></>
                 }
             </td>
@@ -212,6 +213,21 @@ function findPerformance(points: number, gender: string, category: string, event
         var perf: Performance = { Gender: "", Points: 0, Event: "", Mark: 0, MarkTime: "", Category: "" }
         return perf;
     }
+}
+function findPerformanceAsync(points: number, gender: string, category: string, event: string): Promise<Performance> {
+    return new Promise<Performance>((resolve, reject) => {
+        const data = (PointsData as Performance[])
+        var foundItem = data.filter((item: Performance) =>
+            item.Points == points &&
+            item.Gender == gender &&
+            item.Category == category &&
+            item.Event == event
+        )[0];
+        if (foundItem == undefined && points >= 1) {
+            foundItem = findPerformance(points - 1, gender, category, event);
+        }
+        resolve(foundItem);
+    })
 }
 
 //works for times will need to adjust it for other events which use distance and heights
