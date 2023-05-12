@@ -17,9 +17,6 @@
     "paths": {"@/*": ["./*"]},
     "typeRoots": ["./src/types", "./node_modules/phaser/types"]
     ,
-    "types": [
-        "Phaser"
-    ]
   },
 
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
