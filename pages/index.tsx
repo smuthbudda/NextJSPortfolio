@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import Logo from "../public/jordanLogo.png"
 import { UilApps,UilInfoCircle,UilSmile ,UilCircuit } from '@iconscout/react-unicons'
+import { Analytics } from '@vercel/analytics/react';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -58,6 +59,7 @@ export default function Home() {
 
           </div>
         </div>
+        <Analytics />
       </main>
     </>
   )
