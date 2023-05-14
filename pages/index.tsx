@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import Logo from "../public/jordanLogo.png"
-
+import { UilApps,UilInfoCircle,UilSmile ,UilCircuit } from '@iconscout/react-unicons'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
@@ -27,28 +27,35 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.circle}>
             <Image src={Logo} alt='hi' height={400} width={400} className={styles.logo} />
+
             <div className={styles.innerlink}>
-              <div>
-                <Link href={"/about"}>
-                  About
-                </Link>
-              </div>
+              <Link href={"/about"}>
+                <UilInfoCircle  className={styles.icon} />
+              </Link>
+              About
             </div>
+
             <div className={styles.innerlink}>
               <Link href={"/projects"}>
-                Projects
+                <UilApps className={styles.icon} />
               </Link>
+              Projects
             </div>
+
             <div className={styles.innerlink}>
-              <div>
-                Contact
-              </div>
+              <Link href={"/about"}>
+                <UilSmile className={styles.icon} />
+              </Link>
+              Contact
             </div>
+
             <div className={styles.innerlink}>
-              <div>
-                Stuff
-              </div>
+              <Link href={"/stuff/calculator"}>
+                <UilCircuit  className={styles.icon} />
+              </Link>
+              Stuff
             </div>
+
           </div>
         </div>
       </main>

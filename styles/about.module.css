@@ -1,0 +1,10 @@
+.container {
+    margin: 0 auto;
+    max-width: 630px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .photo{
+    margin: auto;
+  }

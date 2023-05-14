@@ -15,8 +15,8 @@
     "jsx": "preserve",
     "incremental": true,
     "paths": {"@/*": ["./*"]},
-    "typeRoots": ["./src/types", "./node_modules/phaser/types"]
-    ,
+    "typeRoots": ["./src/types", "./node_modules/phaser/types"],
+
   },
 
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

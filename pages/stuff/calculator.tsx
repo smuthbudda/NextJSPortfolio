@@ -32,6 +32,7 @@ interface Category {
 
 export default function PointsCalculator() {
     useEffect(() => {
+        console.log("hi");
     }, [])
 
     const [gender, setGender] = useState<Gender[]>([]);
@@ -57,7 +58,7 @@ export default function PointsCalculator() {
             if (points != undefined) {
                 if (points <= 1400 && points >= 0) {
                     // perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
-                    perf = await findPerformanceAsync(points, gender[0].Name, "outdoor", event[0].Event).finally();
+                    perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
                 }
             }
         }
@@ -79,60 +80,66 @@ export default function PointsCalculator() {
     }
 
     return (
-        <div >
-            <div >
-                <h2 >World Athletics Points Calculator</h2>
-                <p>I could not find an athletics table points for the 2023 atheltics year.
-                    So, naturally I made my own. The 2023 tables are valid with points from 0 to 1400 points.
+        <div className={styles.pageContainer}>
+            <div className={styles.pointContainer}>
+
+                <h2 id={styles.title}>World Athletics Points Calculator</h2>
+
+                <p>
+                    This calculator is used to compare the performances of different events. Not to be used for comparing mens and
+                    womens events.
                     <br />
                     <br />
-                    Compare equivalent performances across different athletics events. Scores aren’t designed to compare men’s and women’s performances.
+                    Data is based off of the most recent 2023 points table released by World Athletics.
                 </p>
-                <div >
-                    <div >
-                        <div>
-                            <h3>Event</h3>
-                            <Select options={OutdoorEvents} labelField="Event" placeholder="Event" valueField="Event" onChange={(e) => setEvent(e)} values={[]} />
+
+                <div className={styles.calculate}>
+                    <div className={styles.dropdown}>
+                        <div className={styles.eventSelector}>
+                            <h4>Event</h4>
+                            <Select  options={OutdoorEvents} labelField="Event" placeholder="Event" valueField="Event" onChange={(e) => setEvent(e)} values={[]} className={styles.select} />
                         </div>
-                        <div>
-                            <h3>Gender</h3>
-                            <Select options={GenderArr} labelField="Name" placeholder="Gender" valueField="Value" onChange={(e) => setGender(e)} values={[]} />
+                        <div className={styles.eventSelector}>
+                            <h4>Gender</h4>
+                            <Select options={GenderArr} labelField="Name" placeholder="Gender" valueField="Value" onChange={(e) => setGender(e)} values={[]} className={styles.select} />
                         </div>
-                        <div>
-                            <h3>Category</h3>
-                            <Select options={Category} labelField="Name" placeholder="Category" valueField="Value" onChange={(e) => setCategory(e)} disabled={true} values={[]} />
+                        <div className={styles.eventSelector}>
+                            <h4>Category</h4>
+                            <Select options={Category} labelField="Name" placeholder="Category" valueField="Value" onChange={(e) => setCategory(e)} disabled={true} values={[]} className={styles.select} />
                         </div>
                     </div>
-                    <div className="points-grid--performance">
-                        <div>
-                            <h3>Time (HH:MM:SS.MS)</h3>
-                            <div>
-                                <input type="radio" value={true + ""} id="performance"
-                                    onChange={() => handleChangeRadio(true)} name="calc" defaultChecked={true} />
-                                <input placeholder="hh:mm:ss.ms"
-                                    type="text" onChange={(e) => setTime(e.target.value)} disabled={!calcPoints} />
-                            </div>
-                        </div>
-                        <div>
-                            <h3>Points (0 - 1400)</h3>
-                            <div>
-                                <input type="radio" value={false + ""} id="points"
-                                    onChange={() => handleChangeRadio(false)} name="calc" />
-                                <input placeholder="Points"
-                                    type="text" onChange={(e) => setPoints(Number(e.target.value))} disabled={calcPoints} />
-                            </div>
+
+                    <div className={styles.dropdown}>
+
+                        <div className={styles.inputs}>
+                            <input type="radio" value={true + ""} id="performance" onChange={() => handleChangeRadio(true)} name="calc" defaultChecked={true} className={styles.radio} />
+                            <label className={styles.input}>
+                                <input className={styles.input__field} placeholder=""
+                                    type="text" onChange={(e) => setTime(e.target.value)} disabled={!calcPoints}/>
+                                <span className={styles.input__label}>Time (HH:MM:SS.MS)</span>
+                            </label>
                         </div>
 
+                        <div className={styles.inputs} >
+                            <input type="radio" value={false + ""} id="points" onChange={() => handleChangeRadio(false)} name="calc" className={styles.radio} />
+                            <label className={styles.input}>
+                                <input className={styles.input__field} placeholder=""
+                                    type="text" onChange={(e) => setPoints(Number(e.target.value))} disabled={calcPoints}/>
+                                <span className={styles.input__label}>Points (0 - 1400)</span>
+                            </label>
+                        </div>
+                        
                     </div>
+
                     <div >
-                        <button type="button" onClick={() => CalculateTotal()} disabled={event.length == 0 || gender.length == 0 || time.length == 0 || points == undefined}
+                        <button type="button" onClick={() => CalculateTotal()} disabled={event.length == 0 || gender.length == 0 || time.length == 0 || points == undefined} className={styles.calculateButton}
                         >Calculate</button>
                     </div>
                     <table>
                         <thead>
                             <tr>
                                 <th>Event</th>
-                                <th>Points</th>
+                                <th>Score</th>
                                 <th>Mark</th>
                                 <th>Gender</th>
                                 <th>Category</th>
@@ -175,7 +182,7 @@ const PerformanceRow = (props: any, calc = false) => {
             <td>{performance.Event}</td>
             <td>{performance.Points}</td>
             <td>{
-                Time !== 0 ? Time : performance.Mark}</td>
+                Time != 0 ? Time : performance.Mark}</td>
             <td>{performance.Gender}</td>
             <td>{performance.Category}</td>
             <td>
@@ -186,7 +193,7 @@ const PerformanceRow = (props: any, calc = false) => {
                         performance.Event === "100mH" ||
                         performance.Event === "LJ" ||
                         performance.Event === "TJ" ?
-                        <input type="number" onChange={(e) => CalculteWindTime(Number(e.target.value))} /> :
+                        <input type="number" onChange={(e) => CalculteWindTime(Number(e.target.value))} className={styles.input__field}/> :
                         <></>
                 }
             </td>
@@ -214,6 +221,7 @@ function findPerformance(points: number, gender: string, category: string, event
         return perf;
     }
 }
+
 function findPerformanceAsync(points: number, gender: string, category: string, event: string): Promise<Performance> {
     return new Promise<Performance>((resolve, reject) => {
         const data = (PointsData as Performance[])

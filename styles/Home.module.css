@@ -19,14 +19,30 @@
   display: flex;
   transition: all 0.3s ease-out;
   cursor: pointer;
+
+}
+
+.circle::after{
+  display: block;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color:white;
 }
 
 .logo{
   animation: pulse 3s infinite alternate ease-in-out;
+  border-radius: 50%;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  transition: all 0.3s ease-in-out;
+}
+
+.logo:hover{
+  filter: brightness(50%);
+  transition: all 0.3s ease-in-out;
 }
 
 .circle:hover{
-  transform: rotate(5deg);
   transition: all 0.3s ease-out;
 }
 
@@ -39,7 +55,21 @@
   opacity: 0;
   transition: all 1s;
   z-index: -1; 
+  border:white 4px solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
 }
+
+.icon{
+  width:35px;
+  height:35px;
+}
+
 .innerlink:hover{
   transform: scale(1.05);
 }
@@ -48,7 +78,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   font-size: 1.5rem;
 }
 
@@ -60,8 +89,8 @@
 }
 
 .circle:hover :nth-child(2) {
-  transform: translate( calc(var(--distance-link)),calc(200px));
-  background-color: #FE4A49;
+  transform: translate( calc(200px),calc(200px));
+  background-color: #5faf03;
 }
 
 .circle:hover :nth-child(3) {
@@ -71,7 +100,7 @@
 
 .circle:hover :nth-child(4) {
   transform: translate( calc(-200px),calc(200px));
-  background-color: #FED766;
+  background-color:#fc9700
 }
 
 .circle:hover :nth-child(5) {

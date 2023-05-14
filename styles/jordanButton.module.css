@@ -4,7 +4,7 @@
     font-weight: bold;
     font-size: 20px;
     font-family: "Josefin Sans", sans-serif;
-    background-color: #fdcb6e;
+    background-color: var(--color-signal);
     cursor: pointer;
     box-shadow: 5px 5px 0 0;
     transition: 0.3s;
