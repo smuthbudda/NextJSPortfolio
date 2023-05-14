@@ -58,7 +58,9 @@
     grid-template-columns: 1fr 5fr;
 }
 
-
+#time::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }
 .valueInput:disabled {
     background-color: rgb(216, 216, 216);
     color: black;
@@ -118,4 +120,20 @@
 
 .calculateButton:disabled{
     color:var(--color-disabled)
+}
+
+.row{
+    margin: 1rem 0
+}
+
+.row>td>input{
+    max-width: 100px;
+}
+
+.remove{
+    background-color: var(--color-accent);
+    padding: 10px;
+    text-align: center;
+    border-radius: var(--size-radius);
+    color:var(--color-dark);
 }

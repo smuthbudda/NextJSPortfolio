@@ -4,6 +4,7 @@ import Select from "react-dropdown-select";
 import styles from "../../styles/points.module.css"
 import clsx from 'clsx';
 import { eventNames } from "process";
+import { Time } from "phaser";
 
 interface Performance {
     Points: number | null;
@@ -38,32 +39,36 @@ export default function PointsCalculator() {
     const [gender, setGender] = useState<Gender[]>([]);
     const [event, setEvent] = useState<Event[]>([]);
     const [category, setCategory] = useState<Category[]>([]);
-    const [time, setTime] = useState("0");
+    const [time, setTime] = useState<string>('');
     const [calcPoints, setCalcPoints] = useState<boolean>(true)
     const [points, setPoints] = useState<number | null>();
     const [totals, updateTotalArray] = useState<Performance[]>([]);
 
     const CalculateTotal = async () => {
         var perf: Performance = { Gender: "Undefined", Points: 0, Event: "Undefined", Mark: 0, MarkTime: "Undefined", Category: "Undefined" };
-        if (calcPoints) { //caclulate the points based on the performance 
+        try {
 
-            var hour: number = Number(time.split(':')[0]) * 3600;
-            var minutes: number = Number(time.split(':')[1]) * 60;
-            var seconds: number = Number(time.split(':')[2].split('.')[0]);
-            var milliseconds: number = Number(time.split(':')[2].split('.')[1]) / 100;
-            var totalTime: number = hour + minutes + seconds + milliseconds;
+            if (calcPoints && time != null) { //caclulate the points based on the performance 
 
-            perf = findPoints(totalTime, gender[0].Name, "outdoor", event[0].Event);
-        } else { //calculate the performance based on the points
-            if (points != undefined) {
-                if (points <= 1400 && points >= 0) {
-                    // perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
-                    perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
+                var hour: number = Number(time.split(':')[0]) * 3600;
+                var minutes: number = Number(time.split(':')[1]) * 60;
+                var seconds: number = Number(time.split(':')[2].split('.')[0]);
+                var milliseconds: number = Number(time.split(':')[2].split('.')[1]) / 100;
+                var totalTime: number = hour + minutes + seconds + milliseconds;
+
+                perf = findPoints(totalTime, gender[0].Name, "outdoor", event[0].Event);
+            } else { //calculate the performance based on the points
+                if (points != undefined) {
+                    if (points <= 1400 && points >= 0) {
+                        // perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
+                        perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
+                    }
                 }
             }
-        }
-        if (!totals.includes(perf)) {
             updateTotalArray((oldarray) => [...oldarray, perf]);
+
+        } catch {
+            console.log("There was an error find the performance")
         }
     }
 
@@ -97,7 +102,7 @@ export default function PointsCalculator() {
                     <div className={styles.dropdown}>
                         <div className={styles.eventSelector}>
                             <h4>Event</h4>
-                            <Select  options={OutdoorEvents} labelField="Event" placeholder="Event" valueField="Event" onChange={(e) => setEvent(e)} values={[]} className={styles.select} />
+                            <Select options={OutdoorEvents} labelField="Event" placeholder="Event" valueField="Event" onChange={(e) => setEvent(e)} values={[]} className={styles.select} />
                         </div>
                         <div className={styles.eventSelector}>
                             <h4>Gender</h4>
@@ -114,8 +119,8 @@ export default function PointsCalculator() {
                         <div className={styles.inputs}>
                             <input type="radio" value={true + ""} id="performance" onChange={() => handleChangeRadio(true)} name="calc" defaultChecked={true} className={styles.radio} />
                             <label className={styles.input}>
-                                <input className={styles.input__field} placeholder=""
-                                    type="text" onChange={(e) => setTime(e.target.value)} disabled={!calcPoints}/>
+                                <input className={styles.input__field} id={styles.time} type="text" onChange={(e) => setTime(e.target.value)}
+                                    disabled={!calcPoints} step="0.001" />
                                 <span className={styles.input__label}>Time (HH:MM:SS.MS)</span>
                             </label>
                         </div>
@@ -124,15 +129,15 @@ export default function PointsCalculator() {
                             <input type="radio" value={false + ""} id="points" onChange={() => handleChangeRadio(false)} name="calc" className={styles.radio} />
                             <label className={styles.input}>
                                 <input className={styles.input__field} placeholder=""
-                                    type="text" onChange={(e) => setPoints(Number(e.target.value))} disabled={calcPoints}/>
+                                    type="text" onChange={(e) => setPoints(Number(e.target.value))} disabled={calcPoints} />
                                 <span className={styles.input__label}>Points (0 - 1400)</span>
                             </label>
                         </div>
-                        
+
                     </div>
 
                     <div >
-                        <button type="button" onClick={() => CalculateTotal()} disabled={event.length == 0 || gender.length == 0 || time.length == 0 || points == undefined} className={styles.calculateButton}
+                        <button type="button" onClick={() => CalculateTotal()} className={styles.calculateButton}
                         >Calculate</button>
                     </div>
                     <table>
@@ -178,7 +183,7 @@ const PerformanceRow = (props: any, calc = false) => {
     }
 
     return (
-        <tr key={props}>
+        <tr key={props} className={styles.row}>
             <td>{performance.Event}</td>
             <td>{performance.Points}</td>
             <td>{
@@ -193,11 +198,11 @@ const PerformanceRow = (props: any, calc = false) => {
                         performance.Event === "100mH" ||
                         performance.Event === "LJ" ||
                         performance.Event === "TJ" ?
-                        <input type="number" onChange={(e) => CalculteWindTime(Number(e.target.value))} className={styles.input__field}/> :
+                        <input type="number" onChange={(e) => CalculteWindTime(Number(e.target.value))} className={styles.input__field} /> :
                         <></>
                 }
             </td>
-            <td onClick={() => props.handleRemoveItem(performance)} >Remove</td>
+            <td onClick={() => props.handleRemoveItem(performance)} className={styles.remove}>Remove</td>
         </tr>
     );
 }
@@ -276,10 +281,25 @@ const Category: Category[] = [
 ]
 
 const OutdoorEvents = [
-    { Event: "10 Miles" }, { Event: "10,000m" }, { Event: "10,000mW" }, { Event: "1000m" }, { Event: "100km" },
-    { Event: "100m" }, { Event: "100mH" }, { Event: "10km" }, { Event: "10kmW" }, { Event: "110mH" },
-    { Event: "15,000mW" }, { Event: "1500m" }, { Event: "15km" }, { Event: "15kmW" }, { Event: "2 Miles" },
-    { Event: "20,000mW" }, { Event: "2000m" }, { Event: "2000mSC" }, { Event: "200m" }, { Event: "20km" },
+    { Event: "10 Miles" },
+    { Event: "10,000m" },
+    { Event: "10,000mW" },
+    { Event: "1000m" },
+    // { Event: "100km" },
+    { Event: "100m" },
+    { Event: "100mH" },
+    { Event: "10km" },
+    { Event: "10kmW" },
+    { Event: "110mH" },
+    { Event: "15,000mW" },
+    { Event: "1500m" },
+    { Event: "15km" },
+    { Event: "15kmW" },
+    { Event: "2 Miles" },
+    { Event: "20,000mW" },
+    { Event: "2000m" },
+    { Event: "2000mSC" },
+    { Event: "200m" }, { Event: "20km" },
     { Event: "20kmW" }, { Event: "25km" }, { Event: "30,000mW" }, { Event: "3000m" }, { Event: "3000mSC" },
     { Event: "3000mW" }, { Event: "300m" }, { Event: "30km" }, { Event: "30kmW" }, { Event: "35,000mW" }, { Event: "35kmW" },
     { Event: "3kmW" }, { Event: "400m" }, { Event: "400mH" }, { Event: "4x100m" }, { Event: "4x200m" }, { Event: "4x400m" },

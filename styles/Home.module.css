@@ -38,8 +38,8 @@
 }
 
 .logo:hover{
-  filter: brightness(50%);
-  transition: all 0.3s ease-in-out;
+  filter: brightness(80%);
+  transition: all 0.7s ease-in-out;
 }
 
 .circle:hover{

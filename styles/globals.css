@@ -19,6 +19,10 @@
   --size-bezel: .5rem;
   --size-radius: 4px;
 
+
+  --experience-one:#4ab3ff;
+  --experience-two:#407197;
+  --experience-three:#8094a3;
 }
 
 @media (prefers-color-scheme: dark) {
