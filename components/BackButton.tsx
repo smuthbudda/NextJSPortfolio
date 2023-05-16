@@ -7,8 +7,8 @@ export default function backButton() {
     return (
         <div>
             <div className={styles.container}>
-                <Link href="/" className={styles.backButton}>
-                    <UilAngleLeft size="50">
+                <Link href="/" >
+                    <UilAngleLeft size="60" className={styles.backButton}>
                     </UilAngleLeft>
                 </Link>
             </div>

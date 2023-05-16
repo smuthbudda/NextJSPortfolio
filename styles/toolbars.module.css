@@ -32,7 +32,7 @@
 
 .toolbar__contact {
     transform: rotate(90deg) translateX(-1.5rem) translateY(-2px);
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 .toolbar__contact>*{
     text-transform: capitalize;
@@ -57,7 +57,7 @@
     bottom: -160px;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 800px) {
     .toolbar {
         display: none;
     }

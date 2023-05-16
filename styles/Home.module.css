@@ -30,7 +30,7 @@
 }
 
 .logo{
-  animation: pulse 3s infinite alternate ease-in-out ;
+  animation: pulse 3s infinite alternate ease-in-out,load_in 1s;
 
   transition: all 0.3s ease-in-out;
 }
@@ -71,7 +71,7 @@
 
 .innerlink:hover{
   transform: scale(1.05);
-  box-shadow: 0 19px 38px var(--color-signal), 0 15px 12px var(--color-signal);
+  box-shadow: 0 19px 38px var(--experience-one), 0 15px 12px var(--experience-one);
 }
 
 .innerlink > *{
@@ -151,7 +151,7 @@
 @keyframes load_in {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;

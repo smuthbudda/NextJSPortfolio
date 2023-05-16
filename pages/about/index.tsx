@@ -7,7 +7,7 @@ export default function About() {
     return (
         <div className={styles.container}>
             <div className={styles.image}>
-                <Image src={Logo} alt='hi' height={150} width={150} className={styles.photo} />
+                <Image src={Logo} alt='hi' height={200} width={200} className={styles.photo} />
             </div>
             <div>
                 <p className={styles.about}>

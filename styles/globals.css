@@ -4,26 +4,26 @@
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-    font-family: "Ubuntu Monospace", sans-serif;
+  font-family: "Ubuntu Monospace", sans-serif;
 
   --color-light: white;
   --color-dark: #212121;
   --color-disabled: #6b6b6b;
   --color-signal: #fab700;
+  --experience-one: #4ab3ff;
+  --experience-two: #407197;
+  --experience-three: #8094a3;
   --color-background-invert: var(--color-dark);
   --color-background: var(--color-light);
   --color-text: var(--color-dark);
   --color-accent: var(--color-signal);
-  
+
   --primary-card-color: white;
   --size-bezel: .5rem;
   --size-radius: 4px;
+  --size-small: 800px;
   --logo-size: 150px;
   --logo-size-negative: -150px;
-
-  --experience-one:#4ab3ff;
-  --experience-two:#407197;
-  --experience-three:#8094a3;
 }
 
 
@@ -58,6 +58,7 @@ a {
     --color-foreground: var(--color-light);
     --color-text: var(--color-light);
   }
+
   body {
     color: rgb(var(--color-foreground));
     background: var(--color-background);
