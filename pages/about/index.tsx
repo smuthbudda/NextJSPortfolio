@@ -1,5 +1,5 @@
 import styles from "../../styles/about.module.css"
-import Logo from "../../public/jordanLogo.png"
+import Logo from "../../public/JSLogo.png"
 import Image from 'next/image'
 import clsx from "clsx"
 

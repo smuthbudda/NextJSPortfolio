@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     min-height: 20px;
+    animation: load_in 0.5s;
   }
   .link {
     position: absolute;
@@ -35,4 +36,14 @@
   }
   .main:hover::after {
     opacity: 1;
+  }
+
+  @keyframes load_in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+    }
   }

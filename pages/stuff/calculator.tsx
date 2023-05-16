@@ -210,7 +210,7 @@ const PerformanceRow = (props: any, calc = false) => {
 function findPerformance(points: number, gender: string, category: string, event: string): Performance {
     const data = (PointsData as Performance[])
     try {
-        var foundItem = data.filter((item: Performance) =>
+        let foundItem = data.filter((item: Performance) =>
             item.Points == points &&
             item.Gender == gender &&
             item.Category == category &&

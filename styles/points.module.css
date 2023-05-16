@@ -6,17 +6,20 @@
 }
 
 .pointContainer {
-    background: var(--color-dark);
-  padding: calc(4 * var(--size-bezel));
-  margin-top: calc(4 * var(--size-bezel));
-  border-radius: var(--size-radius);
-  border: 3px solid var(--color-signal, currentColor);
-  box-shadow: .5rem .5rem 0 var(--color-signal, currentColor);
+    background-color: var(--color-background);
+    padding: calc(4 * var(--size-bezel));
+    margin-top: calc(4 * var(--size-bezel));
+    border-radius: var(--size-radius);
+    border: 3px solid var(--color-signal, currentColor);
+    box-shadow: .5rem .5rem 0 var(--color-signal, currentColor);
+    animation: load_in 0.5s;
 }
-#title{
+
+#title {
     font-weight: 900;
     margin-bottom: 3rem;
 }
+
 .pointContainer>p {
     margin-bottom: 3rem;
 }
@@ -35,20 +38,20 @@
 }
 
 
-.select>div{
-    color:var(--color-dark);
+.select>div {
+    color: var(--color-background-invert);
     border-radius: var(--size-radius);
 }
 
 
-.select>div>span{
-    color:var(--color-signal);
-    background-color: var(--color-dark);
+.select>div>span {
+    color: var(--color-signal);
+    background-color: var(--color-background-invert);
 }
 
-.eventSelector>div{
+.eventSelector>div {
     border-radius: var(--size-radius);
-    border: 3px solid white;
+    border: 3px solid var(--color-background-invert);
 }
 
 
@@ -60,10 +63,11 @@
 
 #time::-webkit-datetime-edit-ampm-field {
     display: none;
-  }
+}
+
 .valueInput:disabled {
     background-color: rgb(216, 216, 216);
-    color: black;
+    color: var(--color-background);
 }
 
 .radio {
@@ -84,7 +88,7 @@
     white-space: nowrap;
     transform: translate(0, 0);
     transform-origin: 0 0;
-    background: var(--color-dark);
+    background: var(--color-background, currentColor);
     transition: transform 120ms ease-in;
     font-weight: bold;
     line-height: 1.2;
@@ -101,39 +105,50 @@
     border-radius: var(--size-radius);
 }
 
-.input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
+.input__field:focus+.input__label, .input__field:not(:placeholder-shown)+.input__label {
     transform: translate(0.25rem, -65%) scale(0.8);
     color: var(--color-accent);
 }
 
-.calculateButton{
+.calculateButton {
     height: 2.5rem;
-    padding:0 1rem;
+    padding: 0 1rem;
     text-align: center;
     background-color: var(--color-signal);
     border-radius: var(--size-radius);
-    border:none;
-    color: var(--color-dark);
+    border: none;
+    color: var(--color-background);
     font-weight: 800;
     cursor: pointer;
 }
 
-.calculateButton:disabled{
-    color:var(--color-disabled)
+.calculateButton:disabled {
+    color: var(--color-disabled)
 }
 
-.row{
+.row {
     margin: 1rem 0
 }
 
-.row>td>input{
+.row>td>input {
     max-width: 100px;
 }
 
-.remove{
+.remove {
     background-color: var(--color-accent);
     padding: 10px;
     text-align: center;
     border-radius: var(--size-radius);
-    color:var(--color-dark);
+    color: var(--color-dark);
+}
+
+@keyframes load_in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+    }
 }

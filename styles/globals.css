@@ -10,7 +10,7 @@
   --color-dark: #212121;
   --color-disabled: #6b6b6b;
   --color-signal: #fab700;
-
+  --color-background-invert: var(--color-dark);
   --color-background: var(--color-light);
   --color-text: var(--color-dark);
   --color-accent: var(--color-signal);
@@ -18,45 +18,14 @@
   --primary-card-color: white;
   --size-bezel: .5rem;
   --size-radius: 4px;
-
+  --logo-size: 150px;
+  --logo-size-negative: -150px;
 
   --experience-one:#4ab3ff;
   --experience-two:#407197;
   --experience-three:#8094a3;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -72,7 +41,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #10101a;
+  background: var(--color-background);
 }
 
 a {
@@ -80,8 +49,41 @@ a {
   text-decoration: none;
 }
 
+
+
 @media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-dark);
+    --color-background-invert: var(--color-light);
+    --color-foreground: var(--color-light);
+    --color-text: var(--color-light);
+  }
+  body {
+    color: rgb(var(--color-foreground));
+    background: var(--color-background);
+  }
+
   html {
     color-scheme: dark;
   }
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-light);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-light);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-light);
 }
