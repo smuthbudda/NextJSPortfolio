@@ -4,7 +4,9 @@ import { useRef } from "react";
 import styles from "../../styles/projects.module.css"
 import Image from "next/image";
 import CodeImg from "../../public/codeimage.png";
+import SalaryPackaging from "../../public/SalaryPacakging.png";
 import other from "../../public/reactwebsite.png";
+import clsx from "clsx";
 
 type combination = {
   configuration: number;
@@ -74,26 +76,21 @@ type combination = {
 const Projects = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.one}>
-        <Image src={other} alt="Image Code" className={styles.codeImage} height={400} />
-      </div>
-
-      <div className={styles.two}>
-        <Image src={CodeImg} alt="Image Code" className={styles.codeImage} height={400} />
-      </div>
-
-      <div className={styles.thre}>
-        <Image src={other} alt="Image Code" className={styles.codeImage} height={400} />
-      </div>
-
-      <div className={styles.four}>
-        <Image src={CodeImg} alt="Image Code" className={styles.codeImage} height={400} />
-      </div>
-
-      <div className={styles.five}>
-        <Image src={other} alt="Image Code" className={styles.codeImage} height={400} />
-      </div>
-      
+      <figure className={clsx(styles.gallery__item, styles.gallery__item1)}>
+        <Image src={other} alt="Image Code" className={styles.gallery__img} />
+      </figure>
+      <figure className={clsx(styles.gallery__item, styles.gallery__item2)}>
+        <Image src={SalaryPackaging} alt="Image Code" className={styles.gallery__img} />
+      </figure>
+      <figure className={clsx(styles.gallery__item, styles.gallery__item3)}> 
+        <Image src={other} alt="Image Code" className={styles.gallery__img} />
+      </figure>
+      <figure className={clsx(styles.gallery__item, styles.gallery__item4)}>
+        <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
+      </figure>
+      <figure className={clsx(styles.gallery__item, styles.gallery__item5)}>
+        <Image src={other} alt="Image Code" className={styles.gallery__img} />
+      </figure>
     </div>
   );
 }

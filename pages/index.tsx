@@ -51,7 +51,7 @@ export default function Home() {
             </div>
 
             <div className={styles.innerlink}>
-              <Link href={"/about"}>
+              <Link href={"/things"}>
                 <UilSmile className={styles.icon} />
               </Link>
               Things

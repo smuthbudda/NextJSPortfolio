@@ -1,58 +1,87 @@
 .container {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-    position: relative;
-    animation: load_in 0.5s;
+    margin:0 auto;
+    max-width:1200px;
     display: grid;
-    grid-template-areas: "one two three"
-        " four five five";
-    grid-template-columns: 1fr 1fr 1fr;
-    gap:1rem;
-    justify-content: center;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 120px);
+    grid-gap: 1rem;
+}
+.gallery__item{
+    overflow: hidden;
+}
+.gallery__img{
+    filter: brightness(70%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+    border:var(--color-signal) 5px solid;
+    border-radius: var(--size-radius);
+}
+
+.gallery__item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-row-end: 4;
+}
+.gallery__item2 {
+    grid-column-start: 4;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 4;
+}
+
+.gallery__item3 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6; 
+}
+
+.gallery__item4 {
+    grid-column-start: 5;
+    grid-column-end: 9;
+    grid-row-start: 4;
+    grid-row-end: 9;
+}
+.gallery__item5 {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 6;
+    grid-row-end: 9;
+}
+
+.gallery__img:hover{
+    /* transform: scale(1.02);
+    transition: all 0.3s ease-in-out; */
+    animation: pulse 800ms ease-in-out;
+    filter: brightness(100%);
 }
 
 
 
+@media(max-width: 700px) {
 
-.one {
-    grid-area: one;
-    height: 400px;
-}
-
-.one {
-    grid-area: one;
-}
-
-.two {
-    grid-area: two;
-}
-
-.three {
-    grid-area: three;
-}
-
-.four {
-    grid-area: four;
-}
-
-.five {
-    grid-area: five;
-}
-
-@media(max-width: 1000px) {
     .container {
-        margin: 0 auto;
-        max-width: 1200px;
-        padding: 20px;
-        position: relative;
-        animation: load_in 0.5s;
-        display: grid;
-        grid-template-areas: "one two"
-                            " four three "
-                            " five five ";
-        grid-template-columns: 50% 50%;
+        display: flex;
+        flex-direction: column;
+       margin: 0 1rem;
     }
 
+    .gallery__item1 {}
+    .gallery__item2 {}
+    .gallery__item3 {}
+    .gallery__item4 {}
+    .gallery__item5 {}
+}
 
+@keyframes pulse{
+    from, to{
+        scale:1
+    }
+    50%{
+        scale:1.03;
+    }
 }
