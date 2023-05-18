@@ -8,6 +8,7 @@
 }
 .gallery__item{
     overflow: hidden;
+    position: relative;
 }
 .gallery__img{
     filter: brightness(70%);
@@ -60,7 +61,22 @@
     filter: brightness(100%);
 }
 
+.headers{
+    position: absolute;
+    left:1rem;
+    top:1rem;
+    z-index: 5;
+    color:var(--color-light);
+    font-size: 1.5rem;
+    text-decoration:underline;
+    transition: all 0.3s ease-in-out;
+    text-shadow: 2px 2px var(--color-dark);
+}
 
+.gallery__item:hover .headers{
+    color:var(--color-signal);
+    transition: all 0.3s ease-in-out;
+}
 
 @media(max-width: 700px) {
 

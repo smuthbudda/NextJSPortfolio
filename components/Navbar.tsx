@@ -71,7 +71,7 @@ const Navbar = () => {
             </div> */}
             {backButton()}
 
-            <JordanButton title="CV" link={"../JordanSamsonResume.pdf"} />
+            <JordanButton title="CV" link={"../JordanSResume.pdf"} />
             {/* <div className={clsx(styles.side_nav, navActive ? styles.active : styles.inactive)}>
                 <Link href="/about"><div><span>01. </span>About</div></Link>
                 <Link href="/projects"><div><span>02. </span>Projects</div></Link>
