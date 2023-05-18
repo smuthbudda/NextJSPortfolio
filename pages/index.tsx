@@ -65,7 +65,7 @@ export default function Home() {
               </Link>
               Things
             </div>
-
+ 
             <div className={clsx(styles.innerlink, styles.link4, active ? styles.active : styles.nonactive)}>
               <Link href={"/stuff/calculator"}>
                 <UilCircuit  className={styles.icon} />
