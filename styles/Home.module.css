@@ -9,9 +9,6 @@
 
 .circle {
   border-radius: 50%;
-  /* background-color: ; */
-  width:325px;
-  height: 325px;
   text-align: center;
   position: relative;
   z-index: 10;
@@ -31,7 +28,7 @@
 
 .logo{
   animation: pulse 3s infinite alternate ease-in-out,load_in 1s;
-
+  z-index: 12;
   transition: all 0.3s ease-in-out;
 }
 
@@ -49,11 +46,8 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  right: calc(50% - 50px);
-  top: calc(50% - 50px);
-  opacity: 0;
   transition: all 1s;
-  z-index: -1; 
+   
   border:var(--color-text) 4px solid;
   display: flex;
   flex-direction: column;
@@ -61,7 +55,33 @@
   align-items: center;
   border-radius: 50%;
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  right: calc(50% - 50px);
+  top: calc(50% - 50px);
 
+}
+
+.nonactive{
+  opacity: 0;
+}
+
+.innerlink.active{
+  z-index: 11;
+}
+.innerlink.active.link1{
+  transform: translate( calc(170px),calc(170px));
+  background-color:var(--color-signal); 
+}
+.innerlink.active.link2{
+  transform: translate( calc(-170px),calc(-170px));
+  background-color: var(--color-signal);
+}
+.innerlink.active.link3{
+  transform: translate( calc(-170px),calc(170px));
+  background-color:var(--color-signal);
+}
+.innerlink.active.link4{
+  transform: translate( calc(170px),calc(-170px)) ;
+  background-color: var(--color-signal)
 }
 
 .icon{
@@ -81,52 +101,45 @@
   font-size: 1.5rem;
 }
 
-.circle:hover .innerlink {
+/* .circle:hover .innerlink {
   opacity: 1;
   transition: all 1s;
   z-index: -1;
   transform: scale(1.3);
-}
+} */
 
-.circle:hover :nth-child(2) {
-  transform: translate( calc(170px),calc(170px));
-  background-color:var(--color-signal);
+/* .circle:hover :nth-child(2) {
+  
 }
 
 .circle:hover :nth-child(3) {
-  transform: translate( calc(-170px),calc(-170px));
-  background-color: var(--color-signal);
+  
 }
 
 .circle:hover :nth-child(4) {
-  transform: translate( calc(-170px),calc(170px));
-  background-color:var(--color-signal);
+  
 }
 
 .circle:hover :nth-child(5) {
-  transform: translate( calc(170px),calc(-170px)) ;
-  background-color: var(--color-signal)
-}
+  
+} */
 
 
 @media (max-width: 700px) {
-  .circle:hover :nth-child(2) {
-    transform: translateY(220px);
-    background-color: var(--color-signal)
+  .innerlink.active.link1{
+    transform: translate( calc(130px),calc(130px));
+    background-color:var(--color-signal); 
   }
-  
-  .circle:hover :nth-child(3) {
-    transform: translateY(340px);
-    background-color: var(--color-signal)
+  .innerlink.active.link2{
+    transform: translate( calc(-130px),calc(-130px));
+    background-color: var(--color-signal);
   }
-  
-  .circle:hover :nth-child(4) {
-    transform: translateY(-230px);
-    background-color: var(--color-signal)
+  .innerlink.active.link3{
+    transform: translate( calc(-130px),calc(130px));
+    background-color:var(--color-signal);
   }
-  
-  .circle:hover :nth-child(5) {
-    transform: translateY(-350px);
+  .innerlink.active.link4{
+    transform: translate( calc(130px),calc(-130px)) ;
     background-color: var(--color-signal)
   }
   .container {

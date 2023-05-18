@@ -15,7 +15,7 @@
     height: 100%;
     object-fit: cover;
     transition: all 0.3s ease-in-out;
-    border:var(--color-signal) 5px solid;
+    /* border:var(--color-signal) 5px solid; */
     border-radius: var(--size-radius);
 }
 
