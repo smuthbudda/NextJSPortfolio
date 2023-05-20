@@ -25,6 +25,7 @@ export default function Home() {
     if (prefersDark) {
       setDark(true);
     }
+
   }, []);
 
   function handleClick(){
@@ -38,8 +39,6 @@ export default function Home() {
         <meta name="description" content="Jordan Samson" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/jordanLogo.png" />
-        
-
       </Head>
       <main >
         <div className={styles.container}>
@@ -72,7 +71,6 @@ export default function Home() {
               </Link>
               Stuff
             </div>
-
           </div>
         </div>
         <Analytics />
