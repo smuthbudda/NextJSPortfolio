@@ -64,7 +64,6 @@ type combination = {
 //             <div className={styles.shape}><Image src={CodeImg} alt="Image Code" className={styles.codeImage}/></div>
 //             <div className={styles.shape}></div>
 //             <div className={styles.shape}></div>
-
 //           </div>
 //         </div>
 //       )}
