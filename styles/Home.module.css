@@ -14,8 +14,7 @@
   z-index: 10;
   display: flex;
   transition: all 0.3s ease-out;
-  cursor: pointer;
-
+  
 }
 
 .circle::after{
@@ -30,6 +29,7 @@
   animation: pulse 3s infinite alternate ease-in-out,load_in 1s;
   z-index: 12;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .logo:hover{
@@ -146,7 +146,7 @@
     height: 100vh;  
   }
   .innerlink.active{
-    z-index: 15;
+    z-index: 20;
   }
 
 }
