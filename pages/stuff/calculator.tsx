@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PointsData from '../../public/WorldAthletics.json';
 import Select from "react-dropdown-select";
 import styles from "../../styles/points.module.css"
+
 import clsx from 'clsx';
 import { eventNames } from "process";
 import { Time } from "phaser";
@@ -95,7 +96,7 @@ export default function PointsCalculator() {
                     womens events.
                     <br />
                     <br />
-                    Data is based off of the most recent 2023 points table released by World Athletics.
+                    Data is based off of the most recent 2023 points <a target="_blank" rel="noopener noreferrer" href="../PointsTable.pdf">table</a> released by World Athletics.
                 </p>
 
                 <div className={styles.calculate}>

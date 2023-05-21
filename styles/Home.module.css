@@ -3,8 +3,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  
+  height: calc(100vh - 100px);
+  flex-direction: column;
+  position: relative;
 }
 
 .circle {
@@ -15,6 +16,24 @@
   display: flex;
   transition: all 0.3s ease-out;
   
+}
+
+.bottomBar{
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+  font-weight: 500;
+}
+.bottomBar:hover{
+  color: var(--color-signal);
+  transition: all ease-in-out 0.3s;
+}
+
+.branchIcon{
+  font-size: 0.5rem;
+  height: 0.8rem;
 }
 
 .circle::after{
