@@ -11,9 +11,7 @@ import clsx from 'clsx'
 import { Octokit } from "octokit";
 import { OctokitResponse, GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
 
-const octokit = new Octokit({
-	auth: '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'
-});
+const octokit = new Octokit({auth: process.env.Git_API_Key});
 
 
 const inter = Inter({ subsets: ['latin'] })
