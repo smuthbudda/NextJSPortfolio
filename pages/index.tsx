@@ -11,7 +11,7 @@ import clsx from 'clsx'
 import { Octokit } from "octokit";
 import { OctokitResponse, GetResponseDataTypeFromEndpointMethod } from "@octokit/types";
 
-const octokit = new Octokit({auth: process.env.Git_API_Key});
+const octokit = new Octokit({ auth: process.env.Git_API_Key });
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -24,29 +24,29 @@ export default function Home() {
 
 	useEffect(() => {
 		const fetch = async () => {
-			let commits = await octokit.request('GET /repos/{owner}/{repo}/commits', {
-				owner: 'smuthbudda',
-				repo: 'japp',
-				headers: {
-					'X-GitHub-Api-Version': '2022-11-28'
-				}
-			})
-			let response = await octokit.request('GET /users/{username}', {
-				username: 'smuthbudda',
-				headers: {
-					'X-GitHub-Api-Version': '2022-11-28'
-				}
-			})
-			setItems("Github: " + response.data.login + ". " + "Commits: " + commits.data.length)
+			try {
+				let commits = await octokit.request('GET /repos/{owner}/{repo}/commits', {
+					owner: 'smuthbudda',
+					repo: 'japp',
+					headers: {
+						'X-GitHub-Api-Version': '2022-11-28'
+					}
+				})
+				let response = await octokit.request('GET /users/{username}', {
+					username: 'smuthbudda',
+					headers: {
+						'X-GitHub-Api-Version': '2022-11-28'
+					}
+				})
+				setItems("Github: " + response.data.login + ". " + "Commits: " + commits.data.length)
+			} catch (err) {
+				console.error(err);
+				console.log(err);
+			}
 		}
 		fetch();
 		console.log(items);
 
-		setLoading(false);
-	}, [])
-
-
-	useEffect(() => {
 		const prefersDark = window.matchMedia(
 			"(prefers-color-scheme: dark)"
 		).matches;
@@ -54,8 +54,9 @@ export default function Home() {
 		if (prefersDark) {
 			setDark(true);
 		}
+		setLoading(false);
+	}, [])
 
-	}, []);
 
 	function handleClick() {
 		setActive(!active);
