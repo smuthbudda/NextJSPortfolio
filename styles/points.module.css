@@ -15,6 +15,10 @@
     animation: load_in 0.5s;
 }
 
+.pointContainer> p> a{
+    color: var(--color-accent);
+}
+
 #title {
     font-weight: 900;
     margin-bottom: 3rem;

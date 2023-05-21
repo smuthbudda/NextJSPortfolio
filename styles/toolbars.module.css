@@ -32,18 +32,18 @@
 
 .toolbar__contact {
     transform: rotate(90deg) translateX(-1.5rem) translateY(-2px);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 .toolbar__contact>*{
     text-transform: capitalize;
     color: var(--color-text);
     text-decoration: none;
+    transition: all 0.4s ease-in-out;
 }
 
 .toolbar__contact:hover > * {
     color: var(--color-signal);
-    transition: all 0.2s ease-in-out;
-    transform: translateX(-1.5rem);
+    transition: all 0.4s ease-in-out;
 }
 
 .toolbar::after {

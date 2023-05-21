@@ -40,7 +40,7 @@ export default function About() {
                         </div>
                     </div>
                     <div>
-                        <h4 className={styles.title}>Experience</h4>
+                        <h3 className={styles.title}>Experience</h3>
                         <div className={styles.experience}>
                             <h4>SafeCode <br/><small>[ April 2022 - present ]</small></h4>
                             <p> According to all known laws of aviation, there is no way a bee should be able to fly. It's wings are too small to get its fat little body off the ground. The bee, of course, flies anyway, because bees don't care what humans think is impossible. </p>
