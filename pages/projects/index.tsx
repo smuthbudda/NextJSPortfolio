@@ -15,6 +15,9 @@ type combination = {
 
 const Projects = () => {
   return (
+  <div>
+    <h1 className={styles.pageTitle}>My Work</h1>
+    <hr/>
     <div className={styles.container}>
       <figure className={clsx(styles.gallery__item, styles.gallery__item1)}>
         <h3 className={styles.headers}>Employer Portal</h3>
@@ -37,6 +40,7 @@ const Projects = () => {
         <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
       </figure>
     </div>
+  </div>
   );
 }
 

@@ -1,6 +1,6 @@
 .container {
     margin: 0 auto;
-    max-width: 700px;
+    max-width: 750px;
     padding: 50px;
     position: relative;
     animation: load_in 0.5s;
@@ -32,7 +32,7 @@
 .experience_title {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .languages {
@@ -45,12 +45,14 @@
 .experience {
     margin-bottom: 1.5rem;
     animation: load_in 0.5s;
+    background-color: rgba(230, 240, 247, 0.699);
+    border-radius: var(--size-radius);
+    padding:0.5rem 0.5rem 0.5rem 1.5rem;
 }
 
 .experience>h4 {
     margin-bottom: 0.5rem;
-    color:var(--color-dark);
-
+    color:var(--color-text);
 }
 
 .experience>p {
@@ -72,14 +74,17 @@
 }
 
 .tech.one {
+    color: var(--color-light);
     background-color: var(--experience-one);
 }
 
 .tech.two {
+    color: var(--color-light);
     background-color: var(--experience-two);
 }
 
 .tech.three {
+    color: var(--color-light);
     background-color: var(--experience-three);
 }
 

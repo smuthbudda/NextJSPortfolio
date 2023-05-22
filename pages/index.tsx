@@ -85,7 +85,7 @@ export default function Home() {
 							<Link href={"/projects"}>
 								<UilApps className={styles.icon} />
 							</Link>
-							Projects
+							My Work
 						</div>
 
 						<div className={clsx(styles.innerlink, styles.link3, active ? styles.active : styles.nonactive)}>

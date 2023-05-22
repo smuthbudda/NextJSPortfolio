@@ -16,6 +16,7 @@
   --color-background-invert: var(--color-dark);
   --color-background: var(--color-light);
   --color-text: var(--color-dark);
+  --color-text-invert: var(--color-light);
   --color-accent: var(--color-signal);
 
   --primary-card-color: white;
@@ -71,20 +72,22 @@ a {
 
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
   background: var(--color-light);
+
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-light);
+  background: var(--color-signal);
+  border-radius: 4px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-light);
+  background: var(--color-signal);
 }

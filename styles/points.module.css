@@ -11,7 +11,7 @@
     margin-top: calc(4 * var(--size-bezel));
     border-radius: var(--size-radius);
     border: 3px solid var(--color-signal, currentColor);
-    box-shadow: .5rem .5rem 0 var(--color-signal, currentColor);
+    box-shadow: .5rem .5rem 0 var(--color-text, currentColor);
     animation: load_in 0.5s;
 }
 
