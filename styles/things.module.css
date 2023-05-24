@@ -21,3 +21,13 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
+
+.image{
+    border-radius: var(--size-radius);
+}
+
+@media(max-width: 800px){
+    .container{
+        padding:0px 20px;
+    }
+}

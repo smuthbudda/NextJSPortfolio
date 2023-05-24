@@ -3,6 +3,7 @@ import React from "react";
 import style from "../../styles/things.module.css"
 import { title } from "process";
 import trackSpikes from "../../public/trackSpikes.jpeg";
+import code from "../../public/codeimage.png";
 import Image from "next/image";
 
 interface Props {
@@ -24,7 +25,7 @@ export default function things() {
             <Blogitem title="What its like being a Jr. Dev"
                 bodyText="Eventually I'll write more stuff here">
                 {
-                    <div><Image width={300} src={trackSpikes} alt="spikes" /></div>
+                    <div><Image width={300} src={code} alt="spikes" className={style.image}/></div>
                 }
             </Blogitem>
         </div>

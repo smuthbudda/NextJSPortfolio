@@ -7,6 +7,7 @@ import CodeImg from "../../public/codeimage.png";
 import SalaryPackaging from "../../public/SalaryPacakging.png";
 import other from "../../public/reactwebsite.png";
 import clsx from "clsx";
+import EPhome from "../../public/ProjectImages/EmployerPortal/homePage.png"
 
 type combination = {
   configuration: number;
@@ -21,7 +22,7 @@ const Projects = () => {
     <div className={styles.container}>
       <figure className={clsx(styles.gallery__item, styles.gallery__item1)}>
         <h3 className={styles.headers}>Employer Portal</h3>
-        <Image src={other} alt="Image Code" className={styles.gallery__img} />
+        <Image src={EPhome} alt="Image Code" className={styles.gallery__img} />
       </figure>
       <figure className={clsx(styles.gallery__item, styles.gallery__item2)}>
         <h3 className={styles.headers}>Salary Packaging Dashboard</h3>
