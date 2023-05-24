@@ -25,9 +25,11 @@ export default function Home() {
 	useEffect(() => {
 		const fetch = async () => {
 			try {
+
 				let commits = await octokit.request('GET /repos/{owner}/{repo}/commits', {
 					owner: 'smuthbudda',
 					repo: 'japp',
+					per_page: 100,
 					headers: {
 						'X-GitHub-Api-Version': '2022-11-28'
 					}

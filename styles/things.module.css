@@ -15,11 +15,21 @@
     border: 3px solid var(--color-signal, currentColor);
     box-shadow: .5rem .5rem 0 var(--color-text, currentColor);
     animation: load_in 0.5s;
+    transition: all ease-in-out 0.2s;
 }
 
-.description{
+.blogContainer:hover{
+    transform: translateX(10px);
+    transition: all ease-in-out 0.2s;
+}
+
+.content__container{
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
+    gap:1rem;
+}
+.content__container>div>h3{
+    margin-bottom: 1rem;
 }
 
 .image{

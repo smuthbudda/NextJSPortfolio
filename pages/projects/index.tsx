@@ -18,28 +18,28 @@ const Projects = () => {
   return (
   <div>
     <h1 className={styles.pageTitle}>My Work</h1>
-    <hr/>
+
     <div className={styles.container}>
-      <figure className={clsx(styles.gallery__item, styles.gallery__item1)}>
-        <h3 className={styles.headers}>Employer Portal</h3>
+      <div className={clsx(styles.gallery__item, styles.gallery__item1)}>
         <Image src={EPhome} alt="Image Code" className={styles.gallery__img} />
-      </figure>
-      <figure className={clsx(styles.gallery__item, styles.gallery__item2)}>
-        <h3 className={styles.headers}>Salary Packaging Dashboard</h3>
+        <h3 className={styles.headers}>Employer Portal</h3>
+      </div>
+      <div className={clsx(styles.gallery__item, styles.gallery__item2)}>
         <Image src={SalaryPackaging} alt="Image Code" className={styles.gallery__img} />
-      </figure>
-      <figure className={clsx(styles.gallery__item, styles.gallery__item3)}>
-        <h3 className={styles.headers}>CEM Portal</h3>
+        <h3 className={styles.headers}>Salary Packaging Dashboard</h3>
+      </div>
+      <div className={clsx(styles.gallery__item, styles.gallery__item3)}>
         <Image src={other} alt="Image Code" className={styles.gallery__img} />
-      </figure>
-      <figure className={clsx(styles.gallery__item, styles.gallery__item4)}>
+        <h3 className={styles.headers}>CEM Portal</h3>
+      </div>
+      <div className={clsx(styles.gallery__item, styles.gallery__item4)}>
+        <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
         <h3 className={styles.headers}>Salary Packaging Page</h3>
+      </div>
+      <div className={clsx(styles.gallery__item, styles.gallery__item5)}>
         <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
-      </figure>
-      <figure className={clsx(styles.gallery__item, styles.gallery__item5)}>
         <h3 className={styles.headers}>IAAF Table Calculator</h3>
-        <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
-      </figure>
+      </div>
     </div>
   </div>
   );
