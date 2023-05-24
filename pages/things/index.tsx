@@ -14,15 +14,19 @@ export default function things() {
         <div className={style.container}>
             <h1>Blog... Maybe... probably</h1>
 
-            <Blogitem title="2022/2023 Athletics Season Report"
-                bodyText="Eventually I'll write more stuff here " children={
+            <Blogitem title="First Australian track season review."
+                bodyText="Eventually I'll write more stuff here">
+                {
                     <div><Image width={300} src={trackSpikes} alt="spikes" /></div>
-                } />
+                }
+            </Blogitem>
 
             <Blogitem title="What its like being a Jr. Dev"
-                bodyText="Eventually I'll write more stuff here" children={
+                bodyText="Eventually I'll write more stuff here">
+                {
                     <div><Image width={300} src={trackSpikes} alt="spikes" /></div>
-                } />
+                }
+            </Blogitem>
         </div>
     )
 }
