@@ -5,7 +5,7 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
   font-family: "Maven Pro", sans-serif;
-  
+
   --color-light: white;
   --color-dark: #212121;
   --color-disabled: #6b6b6b;
@@ -27,16 +27,25 @@
   --logo-size-negative: -150px;
 }
 
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 html,
 body,
-body[data-theme="light"]  {
+body[data-theme="light"] {
   color: var(--color-text);
-  background: var(--color-background);
-
+  --color-text: var(--color-dark);
+  --color-text-invert: var(--color-light);
 }
-body[data-theme="dark"]  {
-  color: var(--color-text-invert);
+
+body[data-theme="dark"] {
+  color: var(--color-text-dark);
   background: var(--color-background-invert);
+  --color-text: var(--color-light);
+  --color-text-invert: var(--color-dark);
 
 }
 
@@ -74,7 +83,7 @@ a {
 /* Track */
 ::-webkit-scrollbar-track {
   background: var(--color-light);
-   height: 8px;
+  height: 8px;
 }
 
 /* Handle */

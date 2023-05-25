@@ -1,4 +1,4 @@
-import styles from "../styles/toolbars.module.css"
+import styles from "../styles/Components/toolbars.module.css"
 import React, { useEffect, useState } from "react";
 import * as Unicons from '@iconscout/react-unicons';
 import clsx from "clsx";
