@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import styles from "../styles/navbar.module.css"
-import Image from 'next/image';
-import Logo from '../public/jordanLogo.png'
+import ThemeToggle from "./ThemeToggle";
 import JordanButton from "./Button";
 import clsx from 'clsx';
 import { UilBars, UilTimes } from '@iconscout/react-unicons'
-import Resume from "../public/JordanSamsonResume.pdf";
 import BackButton from "./BackButton";
 
 const Navbar = () => {
@@ -23,7 +20,7 @@ const Navbar = () => {
     } else {
         button = <UilBars size="2rem" />
     }
-    const backButton = () => { //if on the homepage then return an empty element
+    const backButton = () => {
         if (thebackButton) {
             if (typeof window === "undefined")
                 return <div></div>
@@ -58,6 +55,7 @@ const Navbar = () => {
     return (
         <nav className={clsx(styles.nav__container, show ? styles.hide_nav : styles.show_nav)}>
             {backButton()}
+            <ThemeToggle />
             <JordanButton title="CV" link={"../JordanSResume.pdf"} />
         </nav>
     );
