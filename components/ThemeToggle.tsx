@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 
 
-const toggle = () => {
+const Toggle = () => {
     const [activeTheme, setActiveTheme] = useState("light");
     const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
@@ -26,4 +26,4 @@ const toggle = () => {
     );
 }
 
-export default toggle;
+export default Toggle;
