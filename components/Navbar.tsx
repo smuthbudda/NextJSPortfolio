@@ -57,25 +57,8 @@ const Navbar = () => {
 
     return (
         <nav className={clsx(styles.nav__container, show ? styles.hide_nav : styles.show_nav)}>
-            {/* <Link href="/">
-                <Image src={Logo} width={70} height={70} alt="logo" />
-            </Link>
-            <div className={styles.nav__links}>
-                <Link href="/about">About</Link>
-                <Link href="/projects">Projects</Link>
-                <div>
-                </div>
-            </div>
-            <div className={styles.hambugermenu} onClick={() => SetnavActive(!navActive)}>
-                {button}
-            </div> */}
             {backButton()}
-
             <JordanButton title="CV" link={"../JordanSResume.pdf"} />
-            {/* <div className={clsx(styles.side_nav, navActive ? styles.active : styles.inactive)}>
-                <Link href="/about"><div><span>01. </span>About</div></Link>
-                <Link href="/projects"><div><span>02. </span>Projects</div></Link>
-            </div> */}
         </nav>
     );
 };

@@ -96,7 +96,9 @@ export default function PointsCalculator() {
                     womens events.
                     <br />
                     <br />
-                    Data is based off of the most recent 2023 points <a target="_blank" rel="noopener noreferrer" href="../PointsTable.pdf">table</a> released by World Athletics.
+                    Data is based off of the most recent 2023 points <a target="_blank" rel="noopener noreferrer" href="../PointsTable.pdf">table</a> released by World Athletics. The
+                    json file containing the all performances can be downloaded <a target="_blank" rel="noopener noreferrer" href="../WorldAthletics.json">here. </a>
+                    Performances adjust via wind use the formulas from this <a target="_blank" rel="noopener noreferrer" href="https://www.tandfonline.com/doi/full/10.1080/17461391.2018.1480062">paper.</a>
                 </p>
 
                 <div className={styles.calculate}>
@@ -137,30 +139,30 @@ export default function PointsCalculator() {
 
                     </div>
 
-                    <div >
+                    <div className={styles.buttonContainer}>
                         <button type="button" onClick={() => CalculateTotal()} className={styles.calculateButton}
                         >Calculate</button>
                     </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Event</th>
-                                <th>Score</th>
-                                <th>Mark</th>
-                                <th>Gender</th>
-                                <th>Category</th>
-                                <th>Wind Adjust</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {totals.map((item, key) =>
-                                <PerformanceRow performance={item} key={key} handleRemoveItem={handleRemoveItem} />
-                            )}
-                        </tbody>
-                    </table>
 
                 </div>
+                <table className={styles.table}>
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Score</th>
+                            <th>Mark</th>
+                            <th>Gender</th>
+                            <th>Category</th>
+                            <th>Wind Adjust</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody className={styles.tableBody}>
+                        {totals.map((item, key) =>
+                            <PerformanceRow performance={item} key={key} handleRemoveItem={handleRemoveItem} />
+                        )}
+                    </tbody>
+                </table>
 
             </div>
         </div>

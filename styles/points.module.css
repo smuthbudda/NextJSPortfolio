@@ -1,8 +1,6 @@
 .pageContainer {
-    padding: 4rem;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    margin: 30px auto;
+    max-width: 800px;
 }
 
 .pointContainer {
@@ -13,9 +11,10 @@
     border: 3px solid var(--color-signal, currentColor);
     box-shadow: .5rem .5rem 0 var(--color-text, currentColor);
     animation: load_in 0.5s;
+
 }
 
-.pointContainer> p> a{
+.pointContainer>p>a {
     color: var(--color-accent);
 }
 
@@ -109,9 +108,16 @@
     border-radius: var(--size-radius);
 }
 
-.input__field:focus+.input__label, .input__field:not(:placeholder-shown)+.input__label {
+.input__field:focus+.input__label,
+.input__field:not(:placeholder-shown)+.input__label {
     transform: translate(0.25rem, -65%) scale(0.8);
     color: var(--color-accent);
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .calculateButton {
@@ -130,9 +136,6 @@
     color: var(--color-disabled)
 }
 
-.row {
-    margin: 1rem 0
-}
 
 .row>td>input {
     max-width: 100px;
@@ -143,7 +146,30 @@
     padding: 10px;
     text-align: center;
     border-radius: var(--size-radius);
-    color: var(--color-dark);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.table {
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.table>thead>tr>th {
+    min-width: 100px;
+}
+
+
+.tableBody {
+    width: 750px;
+}
+
+.tableBody>tbody>tr>td {
+    min-width: 100px;
 }
 
 @keyframes load_in {
@@ -155,4 +181,17 @@
     to {
         opacity: 1;
     }
+}
+
+@media (max-width: 800px) {
+    .pageContainer {
+        margin: 30px;
+    }
+
+    .table {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .tableBody {}
 }

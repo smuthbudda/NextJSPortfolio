@@ -16,29 +16,29 @@ type combination = {
 
 const Projects = () => {
   return (
-  <div>
+  <div className={styles.pageContainer}>
     <h1 className={styles.pageTitle}>My Work</h1>
-
+    <p>Here are some examples of my most recent work for both my job and some personal projects</p>
     <div className={styles.container}>
+      <div className={clsx(styles.gallery__item, styles.gallery__item5)}>
+        <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
+        <div className={styles.headers}><h3>World athletics points calculator</h3><p>More</p></div>
+      </div>
       <div className={clsx(styles.gallery__item, styles.gallery__item1)}>
         <Image src={EPhome} alt="Image Code" className={styles.gallery__img} />
-        <h3 className={styles.headers}>Employer Portal</h3>
+        <div className={styles.headers}><h3>Employer Portal</h3><p>Worked on both the front end and back end for this client employer portal.</p></div>
       </div>
       <div className={clsx(styles.gallery__item, styles.gallery__item2)}>
         <Image src={SalaryPackaging} alt="Image Code" className={styles.gallery__img} />
-        <h3 className={styles.headers}>Salary Packaging Dashboard</h3>
-      </div>
-      <div className={clsx(styles.gallery__item, styles.gallery__item3)}>
-        <Image src={other} alt="Image Code" className={styles.gallery__img} />
-        <h3 className={styles.headers}>CEM Portal</h3>
+        <div className={styles.headers}><h3>MySalPack Admin</h3><p>A system for salary packaging provider to manage clients</p></div>
       </div>
       <div className={clsx(styles.gallery__item, styles.gallery__item4)}>
         <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
-        <h3 className={styles.headers}>Salary Packaging Page</h3>
+        <div className={styles.headers}><h3>Next.js Portfolio Website</h3><p>More</p></div>
       </div>
-      <div className={clsx(styles.gallery__item, styles.gallery__item5)}>
-        <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
-        <h3 className={styles.headers}>IAAF Table Calculator</h3>
+      <div className={clsx(styles.gallery__item, styles.gallery__item3)}>
+        <Image src={other} alt="Image Code" className={styles.gallery__img} />
+        <div className={styles.headers}><h3>CEM Portal</h3><p>More</p></div>
       </div>
     </div>
   </div>
