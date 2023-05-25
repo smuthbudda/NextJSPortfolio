@@ -27,22 +27,17 @@
   --logo-size-negative: -150px;
 }
 
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
+body,
+body[data-theme="light"]  {
+  color: var(--color-text);
   background: var(--color-background);
+
+}
+body[data-theme="dark"]  {
+  color: var(--color-text-invert);
+  background: var(--color-background-invert);
+
 }
 
 a {
@@ -61,7 +56,7 @@ a {
   }
 
   body {
-    color: rgb(var(--color-foreground));
+    color: var(--color-foreground);
     background: var(--color-background);
   }
 
