@@ -3,7 +3,7 @@ import styles from "../styles/navbar.module.css"
 import ThemeToggle from "./ThemeToggle";
 import JordanButton from "./Button";
 import clsx from 'clsx';
-import { UilBars, UilTimes } from '@iconscout/react-unicons'
+import { UilBars, UilTimes, UilAngleLeft} from '@iconscout/react-unicons'
 import BackButton from "./BackButton";
 
 const Navbar = () => {
@@ -23,12 +23,12 @@ const Navbar = () => {
     const backButton = () => {
         if (thebackButton) {
             if (typeof window === "undefined")
-                return <div></div>
+                return <div ></div>
             if (window.location.pathname != "/") {
                 return <BackButton />
             }
         }
-        return <div></div>;
+        return <div className={styles.empty}></div>;
 
     }
 

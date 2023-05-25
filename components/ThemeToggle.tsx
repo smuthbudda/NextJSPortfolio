@@ -4,21 +4,26 @@ import style from "../styles/Components/themeToggle.module.css"
 import clsx from "clsx";
 
 
-export default function ThemeToggle() {
+
+const toggle = () => {
     const [activeTheme, setActiveTheme] = useState("light");
     const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
     useEffect(() => {
         document.body.dataset.theme = activeTheme;
-      }, [activeTheme]);
+    }, [activeTheme]);
 
     return (
-        <div>
-            <label className={style.switch}>
-                <input type="checkbox" onClick={()=> setActiveTheme(inactiveTheme)}/>
-                <span className={clsx(style.slider, style.round)}></span>
+
+        <div className={style.switch}>
+            <label >
+                <input id={style.toggle} className={style.toggle_switch} type="checkbox" onClick={() => setActiveTheme(inactiveTheme)} />
+                <div className={style.sun_moon}><div className={style.dots}></div></div>
+                <div className={style.background}><div className={style.stars1}></div><div className={style.stars2}></div></div>
+                <div className={style.fill}></div>
             </label>
         </div>
     );
 }
 
+export default toggle;

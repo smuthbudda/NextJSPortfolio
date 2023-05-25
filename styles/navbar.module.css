@@ -28,6 +28,11 @@
 .hambugermenu{
     display: none;
 }
+.empty{
+    width: 60px;
+  }
+  
+
 
 @media (max-width: 800px){
     
