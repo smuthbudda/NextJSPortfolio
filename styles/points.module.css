@@ -1,6 +1,7 @@
 .pageContainer {
     margin: 30px auto;
     max-width: 800px;
+    height: 100vh;
 }
 
 .pointContainer {
@@ -11,7 +12,7 @@
     border: 3px solid var(--color-signal, currentColor);
     box-shadow: .5rem .5rem 0 var(--color-text, currentColor);
     animation: load_in 0.5s;
-
+    color: var(--color-dark);
 }
 
 .pointContainer>p>a {
@@ -21,6 +22,7 @@
 #title {
     font-weight: 900;
     margin-bottom: 3rem;
+
 }
 
 .pointContainer>p {
@@ -49,7 +51,7 @@
 
 .select>div>span {
     color: var(--color-signal);
-    background-color: var(--color-background-invert);
+    background-color: var(--color-background);
 }
 
 .eventSelector>div {

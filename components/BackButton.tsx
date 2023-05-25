@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../styles/backButton.module.css"
+import styles from "../styles/Components/backButton.module.css"
 import { UilAngleLeft } from '@iconscout/react-unicons'
 
 export default function backButton() {

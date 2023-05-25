@@ -19,6 +19,7 @@
 
 .about {
     margin-bottom: 2rem;
+    color: var(--color-text);
 }
 
 .title {
@@ -71,6 +72,7 @@
     border-radius: var(--size-radius);
     position: relative;
     font-weight: 500;
+    color: var(--color-text);
 }
 
 .tech.one {
