@@ -54,27 +54,6 @@ a {
   text-decoration: none;
 }
 
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: var(--color-dark);
-    --color-background-invert: var(--color-light);
-    --color-foreground: var(--color-light);
-    --color-text: var(--color-light);
-  }
-
-  body {
-    color: var(--color-foreground);
-    background: var(--color-background);
-  }
-
-  html {
-    color-scheme: dark;
-  }
-}
-
-
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

@@ -2,9 +2,9 @@
 .switch {
   position: relative;
   overflow: hidden;
-  width: 5rem;
+  width: 8rem;
   height: 3rem;
-  transform: translateX(50%);
+  transform: translateX(calc(50% - 1rem));
 }
 
 .switch input {
@@ -22,7 +22,7 @@
 .background {
   z-index: 1;
   position: absolute;
-  width:5rem;
+  width:8rem;
   height: 3rem;
   border-radius: 2rem;
   border: 0.25rem solid #202020;
@@ -35,8 +35,8 @@
 .stars1,
 .stars2 {
   position: absolute;
-  height: 0.4rem;
-  width: 0.4rem; 
+  height: 0.3rem;
+  width: 0.3rem; 
   background: #FFFFFF;
   border-radius: 50%;
   transition: 0.3s all ease;
@@ -183,3 +183,4 @@
   border: 0.25rem solid #78C1D5;
   background: linear-gradient(to right, #78C1D5 0%, #BBE7F5 100%);
 }
+
