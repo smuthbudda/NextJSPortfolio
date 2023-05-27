@@ -4,7 +4,7 @@
   overflow: hidden;
   width: 8rem;
   height: 3rem;
-  transform: translateX(calc(50% - 1rem));
+  transform: translateX(0rem);
 }
 
 .switch input {
@@ -27,7 +27,7 @@
   border-radius: 2rem;
   border: 0.25rem solid #202020;
   background: linear-gradient(to right, #484848 0%,#202020 100%);
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
 
 

@@ -1,6 +1,6 @@
 import styles from "../styles/Components/toolbars.module.css"
 import React, { useEffect, useState } from "react";
-import * as Unicons from '@iconscout/react-unicons';
+import { Github, Youtube, Linkedin, Instagram, FileEarmark} from 'react-bootstrap-icons';
 import clsx from "clsx";
 
 
@@ -10,17 +10,20 @@ function Toolbars() {
         <>
             <div className={clsx(styles.toolbar, styles.left)}>
                 <div className={styles.toolbar__icons} >
+                    <a href={"../JordanSResume.pdf"} target="_blank">
+                        <FileEarmark size={24} />
+                    </a>
                     <a href="https://github.com/smuthbudda?tab=repositories" target="_blank">
-                        <Unicons.UilGithubAlt size="1.5rem" />
+                        <Github size={24} />
                     </a>
                     <a href="https://www.youtube.com/channel/UCACRIvYPVdscGnHulrqfZoQ" target="_blank">
-                        <Unicons.UilYoutube size="1.5rem" />
+                        <Youtube size={24} />
                     </a>
                     <a href="https://www.linkedin.com/in/jordan-samson-51a800231/" target="_blank">
-                        <Unicons.UilLinkedinAlt size="1.5rem" />
+                        <Linkedin size={24} />
                     </a>
                     <a href="https://github.com/smuthbudda?tab=repositories" target="_blank">
-                        <Unicons.UilInstagram size="1.5rem" />
+                        <Instagram size={24} />
                     </a>
                 </div>
             </div>

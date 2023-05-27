@@ -6,7 +6,7 @@ const Layout = ({ children }: PropsWithChildren) => {
   return (
     <>
       <Navbar />
-      <div style={{paddingTop:"100px"}}>
+      <div style={{paddingTop:"120px"}}>
         {children}
       </div>
       <Toolbars/>

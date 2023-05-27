@@ -13,15 +13,18 @@
   --experience-one: #4ab3ff;
   --experience-two: #407197;
   --experience-three: #8094a3;
+  --nav-backgound-dark:rgba(16, 22, 53, 0.288);
+  --nav-backgound-light:rgba(185, 185, 185, 0.6);
   --color-background-invert: var(--color-dark);
   --color-background: var(--color-light);
   --color-text: var(--color-dark);
   --color-text-invert: var(--color-light);
   --color-accent: var(--color-signal);
+  --nav-background: var(--nav-backgound-dark)
 
   --primary-card-color: white;
   --size-bezel: .5rem;
-  --size-radius: 4px;
+  --size-radius: 10px;
   --size-small: 800px;
   --logo-size: 150px;
   --logo-size-negative: -150px;
@@ -39,6 +42,7 @@ body[data-theme="light"] {
   color: var(--color-text);
   --color-text: var(--color-dark);
   --color-text-invert: var(--color-light);
+  --nav-background: var(--nav-backgound-dark);
 }
 
 body[data-theme="dark"] {
@@ -46,7 +50,7 @@ body[data-theme="dark"] {
   background: var(--color-background-invert);
   --color-text: var(--color-light);
   --color-text-invert: var(--color-dark);
-
+  --nav-background: var(--nav-backgound-light);
 }
 
 a {

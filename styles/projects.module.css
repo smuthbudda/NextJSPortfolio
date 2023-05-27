@@ -1,6 +1,7 @@
 .pageContainer{
     margin: 0 auto;
     max-width: 1000px;
+    color:var(--color-text);
 }
 
 .pageContainer>p{
@@ -9,6 +10,7 @@
 }
 .pageContainer>h1{
     margin-left: 1rem;
+    
 }
 
 .container {
@@ -23,10 +25,11 @@
 .gallery__item {
     /* overflow: hidden; */
     position: relative;
-    animation: load_in 0.5s;
+    animation: load_in 1s;
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease-in-out; 
+    
 }
 
 .gallery__img {
@@ -56,6 +59,7 @@
     display: flex;
     gap:1rem;
     border: 1px solid rgb(237, 237, 237);
+    color:var(--color-dark);
 }
 
 .gallery__item:hover {
