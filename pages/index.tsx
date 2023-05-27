@@ -57,7 +57,7 @@ export default function Home() {
 			setDark(true);
 		}
 		setLoading(false);
-	}, [])
+	}, [items])
 
 
 	function handleClick() {

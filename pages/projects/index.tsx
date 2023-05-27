@@ -8,7 +8,7 @@ import SalaryPackaging from "../../public/SalaryPacakging.png";
 import other from "../../public/reactwebsite.png";
 import clsx from "clsx";
 import EPhome from "../../public/ProjectImages/EmployerPortal/homePage.png"
-import CEM1 from "../../public/ProjectImages/CEMPortal/CEM1.png"
+import CEM1 from "../../public/ProjectImages/CEMPortal/Cem1.png"
 
 type combination = {
   configuration: number;

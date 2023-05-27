@@ -88,7 +88,7 @@
         position: fixed;
         display: flex;
         cursor: pointer;
-        justify-content: end;
+        justify-content: flex-end;
         padding:2rem;
         color: var(--color-text);
         right:0;
