@@ -8,7 +8,7 @@ import SalaryPackaging from "../../public/SalaryPacakging.png";
 import other from "../../public/reactwebsite.png";
 import clsx from "clsx";
 import EPhome from "../../public/ProjectImages/EmployerPortal/homePage.png"
-import CEM1 from "../../public/ProjectImages/CEMPortal/Cem1.png"
+
 
 type combination = {
   configuration: number;
@@ -38,7 +38,7 @@ const Projects = () => {
         <div className={styles.headers}><h3>React Portfolio Website</h3><p>My original portfolio website.</p></div>
       </div>
       <div className={clsx(styles.gallery__item, styles.gallery__item3)}>
-        <Image src={CEM1} alt="Image Code" className={styles.gallery__img} />
+        <Image src={EPhome} alt="Image Code" className={styles.gallery__img} />
         <div className={styles.headers}><h3>CEM Portal</h3><p>Agent management system to track agent stats and allow them to record their schedule.</p></div>
       </div>
     </div>
