@@ -75,7 +75,7 @@
 
 .socialMedia> *{
     cursor: pointer;
-    color: var(--color-text-invert);
+    color: var(--color-text);
     transition: all ease-in-out 0.3s;
 }
 
@@ -92,7 +92,8 @@
         padding:2rem;
         color: var(--color-text);
         right:0;
-        top:0
+        top:0;
+        
     }
 
     .nav_top {
@@ -108,6 +109,8 @@
         z-index: 100;
         padding: 2rem;
         box-shadow: 0 1px 4px 1px rgba(0,0,0,.25);
+        backdrop-filter: blur(3px);
+        
     }
 
     .nav_side.active {

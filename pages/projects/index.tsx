@@ -8,6 +8,7 @@ import SalaryPackaging from "../../public/SalaryPacakging.png";
 import other from "../../public/reactwebsite.png";
 import clsx from "clsx";
 import EPhome from "../../public/ProjectImages/EmployerPortal/homePage.png"
+import CEM1 from "../../public/ProjectImages/CEMPortal/CEM1.png"
 
 type combination = {
   configuration: number;
@@ -22,23 +23,23 @@ const Projects = () => {
     <div className={styles.container}>
       <div className={clsx(styles.gallery__item, styles.gallery__item5)}>
         <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
-        <div className={styles.headers}><h3>World athletics points calculator</h3><p>More</p></div>
+        <div className={styles.headers}><h3>IAAF Calulator</h3><p>Custom calculator to compare information between world athletics approved events</p></div>
       </div>
       <div className={clsx(styles.gallery__item, styles.gallery__item1)}>
         <Image src={EPhome} alt="Image Code" className={styles.gallery__img} />
-        <div className={styles.headers}><h3>Employer Portal</h3><p>Worked on both the front end and back end for this client employer portal.</p></div>
+        <div className={styles.headers}><h3>Employer Portal</h3><p>An admin site for salary packaging employers. Displays employee stats and revenue numbers.</p></div>
       </div>
       <div className={clsx(styles.gallery__item, styles.gallery__item2)}>
         <Image src={SalaryPackaging} alt="Image Code" className={styles.gallery__img} />
-        <div className={styles.headers}><h3>MySalPack Admin</h3><p>A system for salary packaging provider to manage clients</p></div>
+        <div className={styles.headers}><h3>MySalPack Admin</h3><p>A system designed to streamline admin tasks for salary packaging. </p></div>
       </div>
       <div className={clsx(styles.gallery__item, styles.gallery__item4)}>
-        <Image src={CodeImg} alt="Image Code" className={styles.gallery__img} />
-        <div className={styles.headers}><h3>Next.js Portfolio Website</h3><p>More</p></div>
+        <Image src={other} alt="Image Code" className={styles.gallery__img} />
+        <div className={styles.headers}><h3>React Portfolio Website</h3><p>My original portfolio website.</p></div>
       </div>
       <div className={clsx(styles.gallery__item, styles.gallery__item3)}>
-        <Image src={other} alt="Image Code" className={styles.gallery__img} />
-        <div className={styles.headers}><h3>CEM Portal</h3><p>More</p></div>
+        <Image src={CEM1} alt="Image Code" className={styles.gallery__img} />
+        <div className={styles.headers}><h3>CEM Portal</h3><p>Agent management system to track agent stats and allow them to record their schedule.</p></div>
       </div>
     </div>
   </div>

@@ -1,7 +1,6 @@
 .container {
     margin: 0 auto;
-    max-width: 750px;
-    padding: 50px;
+    max-width: 800px;
     position: relative;
     animation: load_in 0.5s;
 }
@@ -125,10 +124,14 @@
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .experience_title {
         display: grid;
         grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 30px;
     }
 }
 

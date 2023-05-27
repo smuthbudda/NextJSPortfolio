@@ -3,7 +3,7 @@ import styles from "../styles/navbar.module.css"
 import ThemeToggle from "./ThemeToggle";
 import JordanButton from "./Button";
 import clsx from 'clsx';
-import { X, List, Github, Youtube, Linkedin, Instagram } from 'react-bootstrap-icons';
+import { X, List, Github, Youtube, Linkedin, Instagram,Envelope } from 'react-bootstrap-icons';
 import BackButton from "./BackButton";
 import Link from "next/link";
 
@@ -56,6 +56,9 @@ const Navbar = () => {
                     </a>
                     <a href="https://github.com/smuthbudda?tab=repositories" target="_blank">
                         <Instagram size={40} />
+                    </a>
+                    <a href="mailto: jkdsamson@outlook.com" target="_blank">
+                        <Envelope size={40} />
                     </a>
                 </div>
             </div>
