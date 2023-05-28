@@ -60,7 +60,7 @@ export default function About() {
                             <h4>LeasePlus <br /><small>February 2022 - April 2022 </small></h4>
                             <ul>
                                 <li>
-                                    Performed financial and administrative tasks.
+                                    Performed financial and administrative tasks dealing with large sums of customer funds.
                                 </li>
                                 <li>
                                     Replied to customer questions and complaints through emails and phone calls.
