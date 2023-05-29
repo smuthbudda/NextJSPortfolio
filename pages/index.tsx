@@ -75,7 +75,10 @@ export default function Home() {
 			<main >
 				<div className={styles.container}>
 					<div className={styles.circle}>
-						<Image src={Logo} alt='Jordan Samson' height={325} width={325} className={styles.logo} onClick={() => handleClick()} />
+						<small>Click Me!</small>
+						<Image src={Logo} alt='Jordan Samson' height={325} width={325} className={styles.logo} onClick={() => handleClick()} >
+							
+						</Image>
 						<div className={clsx(styles.innerlink, styles.link1, active ? styles.active : styles.nonactive)}>
 							<Link href={"/about"}>
 								<FilePerson className={styles.icon} />

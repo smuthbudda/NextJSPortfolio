@@ -18,25 +18,6 @@
   transition: all 0.3s ease-out;
   
 }
-
-.bottomBar{
-  position: absolute;
-  bottom: 1rem;
-  text-align: center;
-  cursor: pointer;
-  transition: all ease-in-out 0.5s;
-  font-weight: 500;
-}
-.bottomBar:hover{
-  color: var(--color-signal);
-  transition: all ease-in-out 0.3s;
-}
-
-.branchIcon{
-  font-size: 0.5rem;
-  height: 0.8rem;
-}
-
 .circle::after{
   display: block;
   width: 100px;
@@ -44,6 +25,18 @@
   position: absolute;
   background-color:white;
 }
+.circle>small{
+  position: absolute;
+  left: calc(50% - 15px);
+  top:10px;
+  font-size: 0.5rem;
+}
+
+.branchIcon{
+  font-size: 0.5rem;
+  height: 0.8rem;
+}
+
 
 .logo{
   animation: pulse 3s infinite alternate ease-in-out,load_in 1s;
@@ -118,6 +111,19 @@
   justify-content: center;
   align-items: center;
   font-size: 1.5rem;
+}
+
+.bottomBar{
+  position: absolute;
+  bottom: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all ease-in-out 0.5s;
+  font-weight: 500;
+}
+.bottomBar:hover{
+  color: var(--color-signal);
+  transition: all ease-in-out 0.3s;
 }
 
 
