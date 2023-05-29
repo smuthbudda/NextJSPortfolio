@@ -1,6 +1,6 @@
 .container {
     margin: 0 auto;
-    max-width: 800px;
+    max-width:  var(--container-width);
     position: relative;
     animation: load_in 0.5s;
 }

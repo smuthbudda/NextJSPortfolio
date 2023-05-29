@@ -1,6 +1,6 @@
 .pageContainer {
     margin: 30px auto;
-    max-width: 800px;
+    max-width: var(--container-width);
 
 }
 
