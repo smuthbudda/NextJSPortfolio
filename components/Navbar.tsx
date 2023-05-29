@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/navbar.module.css"
+import styles from "../styles/Components/navbar.module.css"
 import ThemeToggle from "./ThemeToggle";
 import JordanButton from "./Button";
 import clsx from 'clsx';

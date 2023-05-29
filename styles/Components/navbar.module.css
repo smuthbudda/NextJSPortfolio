@@ -9,7 +9,7 @@
     gap: 1rem;
     position: fixed;
     width: 80%;
-    max-width: 800px;
+    max-width: var(--container-width);
     padding: 1rem;
     height: 80px;
     z-index: 100;
@@ -81,6 +81,7 @@
 
 .socialMedia> *:hover{
     color: var(--color-signal);
+    transform: scale(1.1);
     transition: all ease-in-out 0.3s;
 }
 @media (max-width: 800px) {
@@ -93,6 +94,7 @@
         color: var(--color-text);
         right:0;
         top:0;
+        z-index:200;
         
     }
 
