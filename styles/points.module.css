@@ -1,7 +1,7 @@
 .pageContainer {
     margin: 30px auto;
     max-width: var(--container-width);
-
+    min-height: 100%;
 }
 
 .pointContainer {
