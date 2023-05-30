@@ -73,7 +73,7 @@ const Projects = () => {
 	let calculatorImages: StaticImageData[] = [calc, CodeImg];
 	let employerPortalImages: StaticImageData[] = [EPhome, about, balance, contact, table];
 	let salaryPackagingImages: StaticImageData[] = [SalaryPackaging];
-	let cemImages: StaticImageData[] = [Cem1, Cem2, Cem3];
+	//let cemImages: StaticImageData[] = [Cem1, Cem2, Cem3];
 	let other: StaticImageData[] = [thing];
 
 
@@ -110,7 +110,7 @@ const Projects = () => {
 				<GalleryItem
 					header="CEM Portal (Full Stack)"
 					summary="Agent management system to track agent stats and allow them to record their schedule."
-					imageSRC={cemImages}
+					imageSRC={other}
 					tech={["C#", "Blazor", "Rest API", "CSS",".NET 7"]}
 					link="" />
 			</div>
@@ -132,8 +132,8 @@ import balance from "../../public/ProjectImages/EmployerPortal/balancePage.png"
 import contact from "../../public/ProjectImages/EmployerPortal/contact.png"
 import table from "../../public/ProjectImages/EmployerPortal/TablePage.png"
 
-import Cem1 from "../../public/ProjectImages/CEMPortal/CEM1.png"
-import Cem2 from "../../public/ProjectImages/CEMPortal/CEM2.png"
-import Cem3 from "../../public/ProjectImages/CEMPortal/CEM3.png"
+// import Cem1 from "../../public/ProjectImages/CEMPortal/CEM1.png"
+// import Cem2 from "../../public/ProjectImages/CEMPortal/CEM2.png"
+// import Cem3 from "../../public/ProjectImages/CEMPortal/CEM3.png"
 
 
