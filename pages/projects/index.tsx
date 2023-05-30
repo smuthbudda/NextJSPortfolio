@@ -55,8 +55,8 @@ const GalleryItem = (props: GalleryItem) => {
 					<p>{props.summary}</p>
 				</div>
 				<div className={styles.tech}>
-					{props.tech.map(item => (
-						<div>{item}</div>
+					{props.tech.map((item,key) => (
+						<div key={key}>{item}</div>
 					))}
 				</div>
 			</div>
