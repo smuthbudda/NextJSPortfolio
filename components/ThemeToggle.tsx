@@ -1,16 +1,14 @@
 import { useState, useEffect } from "react";
 import React from "react";
 import style from "../styles/Components/themeToggle.module.css"
-import clsx from "clsx";
-
-
 
 const Toggle = () => {
-    const [activeTheme, setActiveTheme] = useState("light");
+    const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme);
     const inactiveTheme = activeTheme === "light" ? "dark" : "light";
 
     useEffect(() => {
         document.body.dataset.theme = activeTheme;
+        window.localStorage.setItem("theme", activeTheme != undefined ? activeTheme : 'dark');
     }, [activeTheme]);
 
     return (

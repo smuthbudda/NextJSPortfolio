@@ -9,7 +9,7 @@
   --color-light: white;
   --color-dark: #212121;
   --backgound-blue :#222E50;
-  --backgound-white :#dfe2e4;
+  --backgound-white :#e6ecf0;
   
   --color-disabled: #6b6b6b;
   --color-signal: #fab700;
@@ -25,7 +25,7 @@
   --color-text: var(--color-dark);
   --color-text-invert: var(--color-light);
   --color-accent: var(--color-signal);
-  --nav-background: var(--nav-backgound-dark)
+  --nav-background: var(--nav-backgound-dark);
   
   --primary-card-color: white;
   --size-bezel: .5rem;

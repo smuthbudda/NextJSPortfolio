@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import styles from "../styles/Components/navbar.module.css"
-import ThemeToggle from "./ThemeToggle";
+//import ThemeToggle from "./ThemeToggle";
+const ThemeToggle = dynamic(() => import("./ThemeToggle"), {
+    ssr: false,
+  });
 import JordanButton from "./Button";
 import clsx from 'clsx';
 import { X, List, Github, Youtube, Linkedin, Instagram,Envelope } from 'react-bootstrap-icons';

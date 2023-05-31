@@ -42,10 +42,10 @@ export default function About() {
                     <div>
                         <h3 className={styles.title}>Experience</h3>
                         <div className={styles.experience}>
-                            <h4>SafeCode <br /><small>April 2022 - present</small></h4>
+                            <h4>SafeCode | Software Developer<br /><small>April 2022 - present</small></h4>
                             <ul>
                                 <li>
-                                    Experience in both front-end and back-end technologies such as HTML/CSS/SCSS, C# and JavaScript, as well as some exposure to SQL.
+                                    Fullstack role developing and maintaining web applications using C# and the Blazor framework.
                                 </li>
                                 <li>
                                     Frameworks: .Net Core, Blazor, Entity Framework Core, MVC etc.
@@ -57,25 +57,28 @@ export default function About() {
                             </ul>
                         </div>
                         <div className={styles.experience}>
-                            <h4>LeasePlus <br /><small>February 2022 - April 2022 </small></h4>
+                            <h4>LeasePlus | Customer Support<br /><small>February 2022 - April 2022 </small></h4>
                             <ul>
                                 <li>
-                                    Performed financial and administrative tasks dealing with large sums of customer funds.
+                                    Acted as the primary point of contact for customers, ensuring their concerns were heard and addressed in a timely manner.
                                 </li>
                                 <li>
-                                    Replied to customer questions and complaints through emails and phone calls.
+                                    Maintained comprehensive records of customer interactions, inquiries, and resolutions in the customer support system.
+                                </li>
+                                <li>
+                                    Collaborated with internal teams, such as technical support or sales, to facilitate prompt and efficient resolutions for complex customer cases.
                                 </li>
                             </ul>
                             <div className={styles.tech}></div>
                         </div>
                         <div className={styles.experience}>
-                            <h4>YMCA <br /><small>September 2021 - January 2022</small></h4>
+                            <h4>YMCA | Duty Manager<br /><small>September 2021 - January 2022</small></h4>
                             <ul>
                                 <li>
                                     Ensured smooth operation of the world’s largest YMCA during strenuous times such as swim meets and COVID19 protests
                                 </li>
                                 <li>
-                                    Consistently dealt with difficult customers calmly and logically to ensure customer satisfaction.
+                                    Ensure exceptional customer service by addressing inquiries, resolving complaints, and handling any issues or conflicts that may arise. Strive to create a welcoming and inclusive environment for all members and guests.
                                 </li>
                                 <li>
                                     A first responder to all first aid situations in the facility, including those involving ambulances and the fire department.
