@@ -112,6 +112,7 @@
 
 .tech>div {
     background-color: var(--experience-two);
+    color: var(--color-light);
     padding: 0.3rem 0.5rem;
     border-radius: var(--size-radius);
 }
