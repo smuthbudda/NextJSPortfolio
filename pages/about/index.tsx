@@ -32,6 +32,7 @@ export default function About() {
                             <div className={clsx(styles.tech, styles.one)}>REST API</div>
                             <div className={clsx(styles.tech, styles.one)}>Blazor</div>
                             <div className={clsx(styles.tech, styles.one)}>CSS</div>
+                            <div className={clsx(styles.tech, styles.one)}>Azure</div>
                             <div className={clsx(styles.tech, styles.two)}>TypeScript</div>
                             <div className={clsx(styles.tech, styles.two)}>React</div>
                             <div className={clsx(styles.tech, styles.two)}>Node.js</div>
@@ -45,7 +46,7 @@ export default function About() {
                             <h4>SafeCode | Software Developer<br /><small>April 2022 - present</small></h4>
                             <ul>
                                 <li>
-                                    Fullstack role developing and maintaining web applications using C# and the Blazor framework.
+                                    Full-stack role involving the development and maintenance of web applications, utilizing the .NET.
                                 </li>
                                 <li>
                                     Frameworks: .Net Core, Blazor, Entity Framework Core, MVC etc.
@@ -53,6 +54,9 @@ export default function About() {
                                 <li>
                                     Communicate and collaborate with multi-disciplinary teams of engineers, designers,
                                     producers, and clients daily.
+                                </li>
+                                <li>
+                                    Utilized Microsoft Azure for cloud-based deployment and hosting of web applications, while effectively leveraging Git version control
                                 </li>
                             </ul>
                         </div>
@@ -75,9 +79,6 @@ export default function About() {
                             <h4>YMCA | Duty Manager<br /><small>September 2021 - January 2022</small></h4>
                             <ul>
                                 <li>
-                                    Ensured smooth operation of the world’s largest YMCA during strenuous times such as swim meets and COVID19 protests
-                                </li>
-                                <li>
                                     Ensure exceptional customer service by addressing inquiries, resolving complaints, and handling any issues or conflicts that may arise. Strive to create a welcoming and inclusive environment for all members and guests.
                                 </li>
                                 <li>
@@ -87,40 +88,40 @@ export default function About() {
                             <div className={styles.tech}></div>
                         </div>
                         <div className={styles.experience}>
-                            <h4>KG Properties (Property Management) <br /><small>May 2019 - August 2019</small></h4>
+                            <h4>KG Properties (Property Management) <br /><small>May 2016 - August 2019</small></h4>
                             <ul>
                                 <li>
-                                    Held showings of rental properties for future tenants.
+                                    Conducted property viewings for prospective tenants seeking their ideal rental homes.
                                 </li>
                                 <li>
-                                    Performed maintenance of properties, including painting, drywalling, and showing the rentals
+                                    Conducted property viewings for prospective tenants seeking their ideal rental homes.
                                 </li>
                             </ul>
                             <div className={styles.tech}></div>
                         </div>
                         <div className={styles.experience}>
-                            <h4>MRU Kids <br /><small>May 2019 - August 2019</small></h4>
+                            <h4>MRU Kids | Camp Leader<br /><small>May 2019 - August 2019</small></h4>
                             <ul>
                                 <li>
-                                    Managed large groups of children ranging from 20-30 in size.
+                                    Supervised a group of children ranging in size from 15-20 children, lead them through a wide range of engaging sports activities, games, and swimming sessions.
                                 </li>
                                 <li>
-                                    Made accommodations for kids unfamiliar with English and/or learning difficulties.
+                                    Thoughtfully catered to children who were unfamiliar with English or had learning difficulties by providing appropriate accommodations and support during camp activities.
                                 </li>
                             </ul>
                             <div className={styles.tech}></div>
                         </div>
                         <div className={styles.experience}>
-                            <h4>Foundation Building Materials <br /><small>May 2020 - August 2020</small></h4>
+                            <h4>Foundation Building Materials | Customer Service/Product Delivery<br /><small>May 2020 - August 2020</small></h4>
                             <ul>
                                 <li>
-                                    In charge of operating heavy machinery such as forklift and drywall delivery trucks.
+                                    Operated and maneuvered heavy machinery, specifically forklifts and drywall delivery trucks, with precision and safety protocols in mind.
                                 </li>
                                 <li>
-                                    Oversaw the operation of a stucco tinting facility where we would exceed the expectations set out for us daily
+                                    Oversaw the operation of a stucco tinting facility where we would exceed the expectations.
                                 </li>
                                 <li>
-                                    Received and filled out advanced orders from customers to complete and deliver on time.
+                                    Received and processed advanced orders from customers, ensuring accurate completion and timely delivery of their requested items.
                                 </li>
                             </ul>
                             <div className={styles.tech}></div>
