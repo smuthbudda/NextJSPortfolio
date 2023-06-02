@@ -42,7 +42,6 @@ const GalleryItem = (props: GalleryItem) => {
 			setIndex(0);
 	}
 
-
 	return (
 		<div className={clsx(styles.gallery__item, active ? styles.active : styles.inactive)} >
 			<CaretLeftFill className={clsx(styles.arrow, styles.left)} size={50} onClick={() => changeImageLeft()} />
