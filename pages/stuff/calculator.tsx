@@ -111,10 +111,6 @@ export default function PointsCalculator() {
                             <h4>Gender</h4>
                             <Select options={GenderArr} labelField="Name" placeholder="Gender" valueField="Value" onChange={(e) => setGender(e)} values={[]} className={styles.select} />
                         </div>
-                        <div className={styles.eventSelector}>
-                            <h4>Category</h4>
-                            <Select options={Category} labelField="Name" placeholder="Category" valueField="Value" onChange={(e) => setCategory(e)} disabled={true} values={[]} className={styles.select} />
-                        </div>
                     </div>
 
                     <div className={styles.dropdown}>
@@ -132,7 +128,7 @@ export default function PointsCalculator() {
                             <input type="radio" value={false + ""} id="points" onChange={() => handleChangeRadio(false)} name="calc" className={styles.radio} />
                             <label className={styles.input}>
                                 <input className={styles.input__field} placeholder=""
-                                    type="text" onChange={(e) => setPoints(Number(e.target.value))} disabled={calcPoints} />
+                                    type="text" onChange={(e) => setPoints(Number(e.target.value))} disabled={calcPoints} max={1400} />
                                 <span className={styles.input__label}>Points (0 - 1400)</span>
                             </label>
                         </div>
@@ -152,7 +148,6 @@ export default function PointsCalculator() {
                             <th>Score</th>
                             <th>Mark</th>
                             <th>Gender</th>
-                            <th>Category</th>
                             <th>Wind Adjust</th>
                             <th>Remove</th>
                         </tr>
@@ -192,7 +187,6 @@ const PerformanceRow = (props: any, calc = false) => {
             <td>{
                 Time != 0 ? Time : performance.Mark}</td>
             <td>{performance.Gender}</td>
-            <td>{performance.Category}</td>
             <td>
                 {
                     performance.Event === "100m" ||
@@ -232,6 +226,7 @@ function findPerformance(points: number, gender: string, category: string, event
 
 function findPerformanceAsync(points: number, gender: string, category: string, event: string): Promise<Performance> {
     return new Promise<Performance>((resolve, reject) => {
+        var perf: Performance = { Gender: "", Points: 0, Event: "", Mark: 0, MarkTime: "", Category: "" }
         const data = (PointsData as Performance[])
         var foundItem = data.filter((item: Performance) =>
             item.Points == points &&
@@ -241,6 +236,9 @@ function findPerformanceAsync(points: number, gender: string, category: string, 
         )[0];
         if (foundItem == undefined && points >= 1) {
             foundItem = findPerformance(points - 1, gender, category, event);
+        }
+        if (foundItem == undefined) {
+            return perf;
         }
         resolve(foundItem);
     })
@@ -284,29 +282,53 @@ const Category: Category[] = [
 ]
 
 const OutdoorEvents = [
-    { Event: "10 Miles" },
-    { Event: "10,000m" },
-    { Event: "10,000mW" },
-    { Event: "1000m" },
-    // { Event: "100km" },
+    { Event: "50m" },
+    { Event: "50mH" },
+    { Event: "55m" },
+    { Event: "55mH" },
+    { Event: "60m" },
+    { Event: "60mH" },
     { Event: "100m" },
+    { Event: "110mH" },
+    { Event: "200m" },
+    { Event: "300m" },
+    { Event: "400m" },
+    { Event: "400mH" },
+    { Event: "500m" },
+    { Event: "600m" },
+    { Event: "800m" },
+    { Event: "4x100m" },
+    { Event: "4x200m" },
+    { Event: "10,000m" },
+    { Event: "1000m" },
     { Event: "100mH" },
     { Event: "10km" },
     { Event: "10kmW" },
-    { Event: "110mH" },
-    { Event: "15,000mW" },
     { Event: "1500m" },
-    { Event: "15km" },
-    { Event: "15kmW" },
     { Event: "2 Miles" },
-    { Event: "20,000mW" },
     { Event: "2000m" },
     { Event: "2000mSC" },
-    { Event: "200m" }, { Event: "20km" },
-    { Event: "20kmW" }, { Event: "25km" }, { Event: "30,000mW" }, { Event: "3000m" }, { Event: "3000mSC" },
-    { Event: "3000mW" }, { Event: "300m" }, { Event: "30km" }, { Event: "30kmW" }, { Event: "35,000mW" }, { Event: "35kmW" },
-    { Event: "3kmW" }, { Event: "400m" }, { Event: "400mH" }, { Event: "4x100m" }, { Event: "4x200m" }, { Event: "4x400m" },
-    { Event: "50,000mW" }, { Event: "5000m" }, { Event: "5000mW" }, { Event: "500m" }, { Event: "50kmW" }, { Event: "5km" }, { Event: "5kmW" },
-    { Event: "600m" }, { Event: "800m" }, { Event: "DT" }, { Event: "Heptathlon" }, { Event: "Decathlon" }, { Event: "HJ" }, { Event: "HM" },
-    { Event: "HT" }, { Event: "JT" }, { Event: "LJ" }, { Event: "Marathon" }, { Event: "Mile" }, { Event: "PV" }, { Event: "SP" }, { Event: "TJ" }
+    { Event: "3000m" },
+    { Event: "3000mSC" },
+    { Event: "3000mW" },
+    { Event: "4x400m" },
+    { Event: "5000m" },
+    { Event: "5000mW" },
+    { Event: "50kmW" },
+    { Event: "5km" },
+    { Event: "5kmW" },
+    { Event: "DT" },
+    { Event: "Pentathlon" },
+    { Event: "Heptathlon" },
+    { Event: "Decathlon" },
+    { Event: "HJ" },
+    { Event: "HM" },
+    { Event: "HT" },
+    { Event: "JT" },
+    { Event: "LJ" },
+    { Event: "Marathon" },
+    { Event: "Mile" },
+    { Event: "PV" },
+    { Event: "SP" },
+    { Event: "TJ" },
 ]
