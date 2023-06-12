@@ -5,7 +5,8 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import Logo from "../public/JSLogo.png"
-import { Journals, Joystick, Terminal, FilePerson, CodeSlash} from 'react-bootstrap-icons';
+import JordanLogo from "../../public/JSLogo.svg"
+import { Journals, Joystick, Terminal, FilePerson, CodeSlash } from 'react-bootstrap-icons';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx'
 import { Octokit } from "octokit";
@@ -67,51 +68,52 @@ export default function Home() {
 	return (
 		<>
 			<Head>
-				<title>Create Next App</title>
+				<title>Jordan Samson</title>
 				<meta name="description" content="Jordan Samson" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/jordanLogo.png" />
 			</Head>
 			<main >
 				<div className={styles.container}>
-					<div className={styles.circle}>
-						<small>Click Me!</small>
-						<Image src={Logo} alt='Jordan Samson' height={325} width={325} className={styles.logo} onClick={() => handleClick()} >
-							
-						</Image>
-						<div className={clsx(styles.innerlink, styles.link1, active ? styles.active : styles.nonactive)}>
-							<Link href={"/about"}>
-								<FilePerson className={styles.icon} />
-							</Link>
-							About
-						</div>
+					<small>Click Me!</small>
+					<div className={styles.orbit}>
+						<div className={styles.innerCircle} />
+					</div>
+					{/* <div className={styles.star}></div>
+					<div className={styles.star}></div> */}
+					<Image src={Logo} alt='Jordan Samson' height={325} width={325} className={styles.logo} onClick={() => handleClick()} />
+					<div className={clsx(styles.innerlink, styles.link1, active ? styles.active : styles.nonactive)}>
+						<Link href={"/about"}>
+							<FilePerson className={styles.icon} />
+						</Link>
+						About
+					</div>
 
-						<div className={clsx(styles.innerlink, styles.link2, active ? styles.active : styles.nonactive)}>
-							<Link href={"/projects"}>
-								<Terminal className={styles.icon} />
-							</Link>
-							My Work
-						</div>
+					<div className={clsx(styles.innerlink, styles.link2, active ? styles.active : styles.nonactive)}>
+						<Link href={"/projects"}>
+							<Terminal className={styles.icon} />
+						</Link>
+						My Work
+					</div>
 
-						<div className={clsx(styles.innerlink, styles.link3, active ? styles.active : styles.nonactive)}>
-							<Link href={"/things"}>
-								<Journals className={styles.icon} />
-							</Link>
-							Things
-						</div>
+					<div className={clsx(styles.innerlink, styles.link3, active ? styles.active : styles.nonactive)}>
+						<Link href={"/things"}>
+							<Journals className={styles.icon} />
+						</Link>
+						Things
+					</div>
 
-						<div className={clsx(styles.innerlink, styles.link4, active ? styles.active : styles.nonactive)}>
-							<Link href={"/stuff/calculator"}>
-								<Joystick className={styles.icon} />
-							</Link>
-							Stuff
-						</div>
+					<div className={clsx(styles.innerlink, styles.link4, active ? styles.active : styles.nonactive)}>
+						<Link href={"/stuff/calculator"}>
+							<Joystick className={styles.icon} />
+						</Link>
+						Stuff
 					</div>
 					<div className={styles.bottomBar}>
 						<a href='https://github.com/smuthbudda/japp' target="_blank">
 							<small>Designed & Built by Jordan Samson
 								<br />
-								<CodeSlash className={styles.branchIcon} size={24}/>
+								<CodeSlash className={styles.branchIcon} size={24} />
 								{!loading
 									? <small>{items}</small>
 									: <>...</>
