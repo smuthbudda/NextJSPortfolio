@@ -210,7 +210,7 @@ function findPerformance(points: number, gender: string, category: string, event
         let foundItem = data.filter((item: Performance) =>
             item.Points == points &&
             item.Gender == gender &&
-            item.Category == category &&
+            //item.Category == category &&
             item.Event == event
         )[0];
         if (foundItem == undefined && points >= 1) {
@@ -231,7 +231,7 @@ function findPerformanceAsync(points: number, gender: string, category: string, 
         var foundItem = data.filter((item: Performance) =>
             item.Points == points &&
             item.Gender == gender &&
-            item.Category == category &&
+            //item.Category == category &&
             item.Event == event
         )[0];
         if (foundItem == undefined && points >= 1) {
@@ -252,7 +252,7 @@ function findPoints(performance: number, gender: string, category: string, event
         var foundItem = data.filter((item: Performance) =>
             item.Mark == performance &&
             item.Gender == gender &&
-            item.Category == category &&
+            //item.Category == category &&
             item.Event == event
         )[0];
         if (foundItem == undefined && performance > 0.00) {
