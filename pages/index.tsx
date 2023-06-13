@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Link from 'next/link'
 import Logo from "../public/JSLogo.png"
-import JordanLogo from "../../public/JSLogo.svg"
+import JordanLogo from "../public/JSLogo.svg"
 import { Journals, Joystick, Terminal, FilePerson, CodeSlash } from 'react-bootstrap-icons';
 import { Analytics } from '@vercel/analytics/react';
 import clsx from 'clsx'

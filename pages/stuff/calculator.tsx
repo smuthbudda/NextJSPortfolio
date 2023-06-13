@@ -39,7 +39,7 @@ export default function PointsCalculator() {
 
     const [gender, setGender] = useState<Gender[]>([]);
     const [event, setEvent] = useState<Event[]>([]);
-    const [category, setCategory] = useState<Category[]>([]);
+    const [category, setCategory] = useState<Category[]>([{ Value: 1, Name: "Outdoor" }]);
     const [time, setTime] = useState<string>('');
     const [calcPoints, setCalcPoints] = useState<boolean>(true)
     const [points, setPoints] = useState<number | null>();
@@ -57,12 +57,12 @@ export default function PointsCalculator() {
                 var milliseconds: number = Number(time.split(':')[2].split('.')[1]) / 100;
                 var totalTime: number = hour + minutes + seconds + milliseconds;
 
-                perf = findPoints(totalTime, gender[0].Name, "outdoor", event[0].Event);
+                perf = findPoints(totalTime, gender[0].Name, category[0].Name, event[0].Event);
             } else { //calculate the performance based on the points
                 if (points != undefined) {
                     if (points <= 1400 && points >= 0) {
                         // perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
-                        perf = findPerformance(points, gender[0].Name, "outdoor", event[0].Event);
+                        perf = findPerformance(points, gender[0].Name, category[0].Name, event[0].Event);
                     }
                 }
             }
@@ -104,12 +104,16 @@ export default function PointsCalculator() {
                 <div className={styles.calculate}>
                     <div className={styles.dropdown}>
                         <div className={styles.eventSelector}>
-                            <h4>Event</h4>
-                            <Select options={OutdoorEvents} labelField="Event" placeholder="Event" valueField="Event" onChange={(e) => setEvent(e)} values={[]} className={styles.select} />
+                            <h4>Category</h4>
+                            <Select options={Category} labelField="Name" placeholder="Category" valueField="Value" onChange={(e) => setCategory(e)} values={[]} className={styles.select} />
                         </div>
                         <div className={styles.eventSelector}>
                             <h4>Gender</h4>
                             <Select options={GenderArr} labelField="Name" placeholder="Gender" valueField="Value" onChange={(e) => setGender(e)} values={[]} className={styles.select} />
+                        </div>
+                        <div className={styles.eventSelector}>
+                            <h4>Event</h4>
+                            <Select options={category[0].Name == "Outdoor" ? OutdoorEvents : IndoorEvents} labelField="Event" placeholder="Event" valueField="Event" onChange={(e) => setEvent(e)} values={[]} className={styles.select} />
                         </div>
                     </div>
 
@@ -210,7 +214,7 @@ function findPerformance(points: number, gender: string, category: string, event
         let foundItem = data.filter((item: Performance) =>
             item.Points == points &&
             item.Gender == gender &&
-            //item.Category == category &&
+            item.Category == category &&
             item.Event == event
         )[0];
         if (foundItem == undefined && points >= 1) {
@@ -224,26 +228,6 @@ function findPerformance(points: number, gender: string, category: string, event
     }
 }
 
-function findPerformanceAsync(points: number, gender: string, category: string, event: string): Promise<Performance> {
-    return new Promise<Performance>((resolve, reject) => {
-        var perf: Performance = { Gender: "", Points: 0, Event: "", Mark: 0, MarkTime: "", Category: "" }
-        const data = (PointsData as Performance[])
-        var foundItem = data.filter((item: Performance) =>
-            item.Points == points &&
-            item.Gender == gender &&
-            //item.Category == category &&
-            item.Event == event
-        )[0];
-        if (foundItem == undefined && points >= 1) {
-            foundItem = findPerformance(points - 1, gender, category, event);
-        }
-        if (foundItem == undefined) {
-            return perf;
-        }
-        resolve(foundItem);
-    })
-}
-
 //works for times will need to adjust it for other events which use distance and heights
 function findPoints(performance: number, gender: string, category: string, event: string): Performance {
     const data = (PointsData as Performance[])
@@ -252,7 +236,7 @@ function findPoints(performance: number, gender: string, category: string, event
         var foundItem = data.filter((item: Performance) =>
             item.Mark == performance &&
             item.Gender == gender &&
-            //item.Category == category &&
+            item.Category == category &&
             item.Event == event
         )[0];
         if (foundItem == undefined && performance > 0.00) {
@@ -277,17 +261,11 @@ const GenderArr: Gender[] = [
 ]
 
 const Category: Category[] = [
-    { Value: 0, Name: "indoor" },
-    { Value: 1, Name: "outdoor" },
+    { Value: 0, Name: "Indoor" },
+    { Value: 1, Name: "Outdoor" },
 ]
 
 const OutdoorEvents = [
-    { Event: "50m" },
-    { Event: "50mH" },
-    { Event: "55m" },
-    { Event: "55mH" },
-    { Event: "60m" },
-    { Event: "60mH" },
     { Event: "100m" },
     { Event: "110mH" },
     { Event: "200m" },
@@ -318,7 +296,6 @@ const OutdoorEvents = [
     { Event: "5km" },
     { Event: "5kmW" },
     { Event: "DT" },
-    { Event: "Pentathlon" },
     { Event: "Heptathlon" },
     { Event: "Decathlon" },
     { Event: "HJ" },
@@ -328,6 +305,42 @@ const OutdoorEvents = [
     { Event: "LJ" },
     { Event: "Marathon" },
     { Event: "Mile" },
+    { Event: "PV" },
+    { Event: "SP" },
+    { Event: "TJ" },
+]
+
+const IndoorEvents = [
+    { Event: "50m" },
+    { Event: "50mH" },
+    { Event: "55m" },
+    { Event: "55mH" },
+    { Event: "60m" },
+    { Event: "60mH" },
+    { Event: "200m" },
+    { Event: "300m" },
+    { Event: "400m" },
+    { Event: "400mH" },
+    { Event: "500m" },
+    { Event: "600m" },
+    { Event: "800m" },
+    { Event: "1000m" },
+    { Event: "1500m" },
+    { Event: "Mile" },
+    { Event: "2000m" },
+    { Event: "3000m" },
+    { Event: "4x200m" },
+    { Event: "4x400m" },
+    { Event: "2" },
+    { Event: "5000m" },
+    { Event: "Pentathlon" },
+    { Event: "Heptathlon" },
+    { Event: "DT" },
+    { Event: "HJ" },
+    { Event: "HM" },
+    { Event: "HT" },
+    { Event: "JT" },
+    { Event: "LJ" },
     { Event: "PV" },
     { Event: "SP" },
     { Event: "TJ" },
