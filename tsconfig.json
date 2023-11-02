@@ -16,6 +16,7 @@
     "incremental": true,
     "paths": {"@/*": ["./*"]},
     "typeRoots": ["./src/types", "./node_modules/phaser/types"],
+    "allowImportingTsExtensions": true
 
   },
   "sourceMap": true,
