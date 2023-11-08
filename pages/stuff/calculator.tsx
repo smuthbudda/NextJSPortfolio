@@ -21,7 +21,7 @@ export default function PointsCalculator() {
 
     const CalculateTotal = async (formEvent: FormEvent<HTMLFormElement>) => {
         formEvent.preventDefault();
-        var perf: PerformanceClass = { Gender: "Undefined", Points: 0, Event: "Undefined", Mark: 0, MarkTime: "Undefined", Category: "Undefined" };
+        var perf: PerformanceClass = { Gender: "Undefined", Points: 0, Event: "Undefined", Mark: 0, MarkTime: "Undefined", Category: "Undefined", ID:""};
 
         const formData = new FormData(formEvent.currentTarget)
         try {
@@ -54,8 +54,8 @@ export default function PointsCalculator() {
         setCalcPoints(true);
     }, []);
 
-    const handleRemoveItem = (e: any) => {
-        updateTotalArray(totals.filter(item => item !== e));
+    const handleRemoveItem = (e: PerformanceClass) => {
+        updateTotalArray(totals.filter(item => item.ID !== e.ID));
     }
 
     const handleChangeRadio = (value: any) => {

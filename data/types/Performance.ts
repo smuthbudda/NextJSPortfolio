@@ -5,6 +5,7 @@ export default class PerformanceClass {
     Category: string | null;
     Mark: number | null;
     MarkTime: string | null;
+    ID:string | null;
 
     constructor(
         points: number | null,
@@ -12,7 +13,8 @@ export default class PerformanceClass {
         event: string | null,
         category: string | null,
         mark: number | null,
-        markTime: string | null
+        markTime: string | null,
+        ID : string | null
     ) {
         this.Points = points;
         this.Gender = gender;
@@ -20,5 +22,6 @@ export default class PerformanceClass {
         this.Category = category;
         this.Mark = mark;
         this.MarkTime = markTime;
+        this.ID = ID
     }
 }
