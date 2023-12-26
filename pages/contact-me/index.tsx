@@ -161,6 +161,15 @@ const Contact = () => {
                 <td><button onClick={async () => await handleUpdate(item.id)} className={styles.calculateButton}>{item.recieved ? 'Reviewed' : 'Nope' }</button></td>
               </tr>
             ))}
+            {items.map((item) => (
+              <tr key={item.id} className={styles.row}>
+                <td> 
+                  Name: {item.name}
+                  <br/>
+                  Message: {item.message}
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       ) : (
