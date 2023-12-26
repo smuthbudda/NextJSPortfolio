@@ -143,7 +143,7 @@ const Contact = () => {
         </div>
       </form>
       {items ? (
-        <table>
+        <table className={styles.table}>
           <thead>
             <tr>
               <th>Email</th>
@@ -154,11 +154,11 @@ const Contact = () => {
           </thead>
           <tbody>
             {items.map((item) => (
-              <tr key={item.id} >
+              <tr key={item.id} className={styles.row}>
                 <td>{item.email}</td>
                 <td>{item.subject}</td>
-                <td onClick={async () => await handleDelete(item.id)}>Delete</td>
-                <td onClick={async () => await handleUpdate(item.id)}>{item.recieved ? 'Reviewed' : 'Nope' }</td>
+                <td><button onClick={async () => await handleDelete(item.id)} className={styles.calculateButton}>Delete</button></td>
+                <td><button onClick={async () => await handleUpdate(item.id)} className={styles.calculateButton}>{item.recieved ? 'Reviewed' : 'Nope' }</button></td>
               </tr>
             ))}
           </tbody>

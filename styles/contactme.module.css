@@ -1,5 +1,5 @@
 .container {
-    margin: 200px auto;
+    margin: 100px auto;
     max-width: 600px;
     background-color: var(--color-background);
     padding: calc(4 * var(--size-bezel));
@@ -66,4 +66,66 @@
 .input__field:not(:placeholder-shown)+.input__label {
     transform: translate(0.25rem, -65%) scale(0.8);
     color: var(--color-accent);
+}
+
+.row>td>input {
+    max-width: 100px;
+}
+
+.remove {
+    background-color: var(--color-accent);
+    padding: 10px;
+    text-align: center;
+    border-radius: var(--size-radius);
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.table {
+    display: block;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.table>thead>tr>th {
+    min-width: 100px;
+}
+
+.row>td>input {
+    max-width: 100px;
+}
+
+.tableBody {
+    width: 750px;
+}
+
+.tableBody>tbody>tr>td {
+    min-width: 100px;
+}
+
+@keyframes load_in {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 800px) {
+    .pageContainer {
+        margin: 0 30px ;
+    }
+
+    .table {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .tableBody {}
 }
