@@ -1,5 +1,5 @@
 import styles from "../../styles/about.module.css"
-import Logo from "../../public/JSLogo.png"
+import Logo from "../../public/Photo.jpg"
 import Image from 'next/image'
 import clsx from "clsx"
 
@@ -7,7 +7,7 @@ export default function About() {
     return (
         <div className={styles.container}>
             <div className={styles.image}>
-                <Image src={Logo} alt='hi' height={200} width={200} className={styles.photo} />
+                <Image src={Logo} alt='hi' height={250} width={175} className={styles.photo} />
             </div>
             <div>
                 <p className={styles.about}>
@@ -23,27 +23,44 @@ export default function About() {
                 <div className={styles.experience_title}>
                     <div className={styles.title}>
                         <h4 >Tech Stack</h4>
-                        <div className={clsx(styles.tech, styles.Proficient)}>Proficient</div>
-                        <div className={clsx(styles.tech, styles.Competent)}>Competent</div>
-                        <div className={clsx(styles.tech, styles.learning)}>Working on it</div>
                         <div className={styles.languages}>
                             <div className={clsx(styles.tech, styles.one)}>.NET Core</div>
+                            <div className={clsx(styles.tech, styles.one)}>.NET Framework</div>
                             <div className={clsx(styles.tech, styles.one)}>C#</div>
                             <div className={clsx(styles.tech, styles.one)}>REST API</div>
                             <div className={clsx(styles.tech, styles.one)}>Blazor</div>
+                            <div className={clsx(styles.tech, styles.one)}>SQL</div>
                             <div className={clsx(styles.tech, styles.one)}>CSS</div>
+                            <div className={clsx(styles.tech, styles.one)}>Git</div>
                             <div className={clsx(styles.tech, styles.one)}>Azure</div>
                             <div className={clsx(styles.tech, styles.two)}>TypeScript</div>
                             <div className={clsx(styles.tech, styles.two)}>React</div>
                             <div className={clsx(styles.tech, styles.two)}>Node.js</div>
-                            <div className={clsx(styles.tech, styles.three)}>SQL</div>
+                            <div className={clsx(styles.tech, styles.two)}>AI</div>
                             <div className={clsx(styles.tech, styles.three)}>Java</div>
                         </div>
+                        <div className={clsx(styles.tech, styles.Proficient)}>Proficient</div>
+                        <div className={clsx(styles.tech, styles.Competent)}>Competent</div>
+                        <div className={clsx(styles.tech, styles.learning)}>Working on it</div>
                     </div>
                     <div>
-                        <h3 className={styles.title}>Experience</h3>
+                        <h1 className={styles.title}>Experience</h1>
                         <div className={styles.experience}>
-                            <h4>SafeCode | Software Developer<br /><small>April 2022 - present</small></h4>
+                            <h3>Revium | .Net Developer <br /><small>July 2023 - present</small></h3>
+                            <ul>
+                                <li>
+                                    A primarily backend role spread across multiple clients and teams which deal with the digital agency.
+                                </li>
+                                <li>
+                                    Technoligies: .Net Core, .Net Framework, Blazor, Entity Framework Core, MVC, SQL. Microsoft Azure B2C. Open AI API 
+                                </li>
+                                <li>
+                                    .Net REST API's, Blazor server projects, .Net Framework MVC, .Net Core.
+                                </li>
+                            </ul>
+                        </div>
+                        <div className={styles.experience}>
+                            <h3>SafeCode | Software Developer<br /><small>April 2022 - July 2023</small></h3>
                             <ul>
                                 <li>
                                     Full-stack role involving the development and maintenance of web applications, utilizing the .NET.
@@ -61,7 +78,7 @@ export default function About() {
                             </ul>
                         </div>
                         <div className={styles.experience}>
-                            <h4>LeasePlus | Customer Support<br /><small>February 2022 - April 2022 </small></h4>
+                            <h3>LeasePlus | Customer Support<br /><small>February 2022 - April 2022 </small></h3>
                             <ul>
                                 <li>
                                     Acted as the primary point of contact for customers, ensuring their concerns were heard and addressed in a timely manner.
@@ -76,7 +93,7 @@ export default function About() {
                             <div className={styles.tech}></div>
                         </div>
                         <div className={styles.experience}>
-                            <h4>YMCA | Duty Manager<br /><small>September 2021 - January 2022</small></h4>
+                            <h3>YMCA | Duty Manager<br /><small>September 2021 - January 2022</small></h3>
                             <ul>
                                 <li>
                                     Ensure exceptional customer service by addressing inquiries, resolving complaints, and handling any issues or conflicts that may arise. Strive to create a welcoming and inclusive environment for all members and guests.
@@ -88,19 +105,7 @@ export default function About() {
                             <div className={styles.tech}></div>
                         </div>
                         <div className={styles.experience}>
-                            <h4>KG Properties (Property Management) <br /><small>May 2016 - August 2019</small></h4>
-                            <ul>
-                                <li>
-                                    Conducted property viewings for prospective tenants seeking their ideal rental homes.
-                                </li>
-                                <li>
-                                    Conducted property viewings for prospective tenants seeking their ideal rental homes.
-                                </li>
-                            </ul>
-                            <div className={styles.tech}></div>
-                        </div>
-                        <div className={styles.experience}>
-                            <h4>MRU Kids | Camp Leader<br /><small>May 2019 - August 2019</small></h4>
+                            <h3>MRU Kids | Camp Leader<br /><small>May 2019 - August 2019</small></h3>
                             <ul>
                                 <li>
                                     Supervised a group of children ranging in size from 15-20 children, lead them through a wide range of engaging sports activities, games, and swimming sessions.
@@ -112,7 +117,7 @@ export default function About() {
                             <div className={styles.tech}></div>
                         </div>
                         <div className={styles.experience}>
-                            <h4>Foundation Building Materials | Customer Service/Product Delivery<br /><small>May 2020 - August 2020</small></h4>
+                            <h3>Foundation Building Materials | Customer Service/Product Delivery<br /><small>May 2020 - August 2020</small></h3>
                             <ul>
                                 <li>
                                     Operated and maneuvered heavy machinery, specifically forklifts and drywall delivery trucks, with precision and safety protocols in mind.

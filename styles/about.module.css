@@ -10,10 +10,13 @@
     justify-content: center;
     margin-bottom: 2rem;
     animation: load_in 0.5s;
+    
 }
 
 .photo {
     margin: auto;
+    border-radius: var(--size-radius);
+    border: var(--color-signal) 4px solid;
 }
 
 .about {
@@ -47,12 +50,20 @@
     animation: load_in 0.7s;
     background-color: rgba(177, 186, 192, 0.699);
     border-radius: var(--size-radius);
-    padding:0.5rem 0.5rem 0.5rem 1.5rem;
+    padding:1.5rem;
+    border: var(--color-text) 4px solid;
 }
 
-.experience>h4 {
+.experience>h3 {
+    margin-bottom: 0.5rem;
+    color:var(--color-signal);
+    text-shadow: 1px 1px black;
+}
+
+.experience>h4>small {
     margin-bottom: 0.5rem;
     color:var(--color-text);
+    text-shadow: none;
 }
 
 .experience>ul {

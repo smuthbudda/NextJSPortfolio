@@ -2,6 +2,7 @@ import styles from "../styles/Components/toolbars.module.css"
 import React, { useEffect, useState } from "react";
 import { Github, Youtube, Linkedin, Instagram, FileEarmark} from 'react-bootstrap-icons';
 import clsx from "clsx";
+import Link from "next/link";
 
 
 function Toolbars() {
@@ -30,7 +31,8 @@ function Toolbars() {
             
             <div className={clsx(styles.toolbar, styles.right)}>
                 <div className={styles.toolbar__contact} >
-                    <a href="mailto: jkdsamson@outlook.com">jkdsamson@outlook.com</a>
+                    {/* <a href="mailto: jkdsamson@outlook.com">jkdsamson@outlook.com</a> */}
+                    <Link href={"/contact-me"}>jkdsamson@outlook.com</Link>
                 </div>
             </div>
 

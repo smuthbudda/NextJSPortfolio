@@ -55,8 +55,9 @@ export default function PointsCalculator() {
     }, []);
 
     const handleRemoveItem = (e: PerformanceClass) => {
-        updateTotalArray(totals.filter(item => item.ID !== e.ID));
-    }
+        updateTotalArray((prevTotals) => prevTotals.filter((item) => item.ID !== e.ID));
+      };
+      
 
     const handleChangeRadio = (value: any) => {
         setCalcPoints(value);

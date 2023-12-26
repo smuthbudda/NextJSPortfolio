@@ -1,9 +1,9 @@
 import PerformanceClass from "@/data/types/Performance.ts";
 import PointsData from '../../public/WorldAthletics.json';
 
+const data = (PointsData as PerformanceClass[])
 export function findPerformance(points: number, gender: string, category: string, event: string): PerformanceClass {
-    const data = (PointsData as PerformanceClass[])
-    var ID = Date.now + "";
+    var ID = UUID();
     try {
         let foundItem = data.filter((item: PerformanceClass) =>
         item.Points == points &&
@@ -25,8 +25,7 @@ export function findPerformance(points: number, gender: string, category: string
 
 //works for times will need to adjust it for other events which use distance and heights
 export function findPoints(performance: number, gender: string, category: string, event: string): PerformanceClass {
-    const data = (PointsData as PerformanceClass[])
-    var ID = Date.now + "";
+    var ID = UUID();
     try {
         var perf: PerformanceClass = { Gender: "", Points: 0, Event: "", Mark: 0, MarkTime: "", Category: "", ID: ID }
         var foundItem = data.filter((item: PerformanceClass) =>
@@ -50,4 +49,8 @@ export function findPoints(performance: number, gender: string, category: string
         var perf: PerformanceClass = { Gender: "", Points: 0, Event: "", Mark: 0, MarkTime: "", Category: "", ID: ID }
         return perf;
     }
+}
+
+export function UUID (): string {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2);
 }

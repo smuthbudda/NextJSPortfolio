@@ -107,7 +107,7 @@ export default function Home() {
 						<Link href={"/stuff/calculator"}>
 							<Joystick className={styles.icon} />
 						</Link>
-						Stuff
+						T&F Calc
 					</div>
 					<div className={styles.bottomBar}>
 						<a href='https://github.com/smuthbudda/japp' target="_blank">
