@@ -61,9 +61,9 @@ const Navbar = () => {
                     <a href="https://github.com/smuthbudda?tab=repositories" target="_blank">
                         <Instagram size={40} />
                     </a>
-                    <a href="mailto: jkdsamson@outlook.com" target="_blank">
+                    <Link href={"/contact-me"}>
                         <Envelope size={40} />
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>
