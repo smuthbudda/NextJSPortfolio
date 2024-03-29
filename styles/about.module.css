@@ -12,6 +12,10 @@
     animation: load_in 0.5s;
     
 }
+.bio_container{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 .photo {
     margin: auto;
@@ -144,6 +148,10 @@
 
     .container {
         padding: 30px;
+    }
+
+    .bio_container{
+        grid-template-columns: 1fr;
     }
 }
 

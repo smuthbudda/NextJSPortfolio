@@ -11,7 +11,7 @@ function Toolbars() {
         <>
             <div className={clsx(styles.toolbar, styles.left)}>
                 <div className={styles.toolbar__icons} >
-                    <a href={"../JordanSResume.pdf"} target="_blank">
+                    <a href={"../JS Resume.pdf"} target="_blank">
                         <FileEarmark size={24} />
                     </a>
                     <a href="https://github.com/smuthbudda?tab=repositories" target="_blank">
@@ -28,11 +28,11 @@ function Toolbars() {
                     </a>
                 </div>
             </div>
-            
+
             <div className={clsx(styles.toolbar, styles.right)}>
                 <div className={styles.toolbar__contact} >
-                    {/* <a href="mailto: jkdsamson@outlook.com">jkdsamson@outlook.com</a> */}
-                    <Link href={"/contact-me"}>jkdsamson@outlook.com</Link>
+                    <a href="mailto: jkdsamson@outlook.com">jkdsamson@outlook.com</a> 
+                    {/* <Link href={"/contact-me"}>jkdsamson@outlook.com</Link> */}
                 </div>
             </div>
 

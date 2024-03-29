@@ -6,42 +6,46 @@ import clsx from "clsx"
 export default function About() {
     return (
         <div className={styles.container}>
-            <div className={styles.image}>
-                <Image src={Logo} alt='hi' height={250} width={175} className={styles.photo} />
-            </div>
-            <div>
+            <div className={styles.bio_container}>
+                <div className={styles.image}>
+                    <Image src={Logo} alt='hi' height={400} width={280} className={styles.photo} />
+                </div>
                 <p className={styles.about}>
                     Hi, I'm Jordan!
                     <br />
                     <br />
-                    I am a software developer currently based in Melbourne, VIC, Australia. In January 2022, I made the decision to move  from my hometown of Calgary, Alberta, Canada, to accompany my partner on her three-year trip to Australia while she completes her post graduate degree. I am excited to explore new opportunities in this vibrant city and further develop my skills in the field.
+                    I am a software developer based in Melbourne, VIC, Australia. In January 2022, I made the decision to move  from my hometown of Calgary, Alberta, Canada, to accompany my partner on her three-year trip to Australia while she completes her post-graduate degree. I am excited to explore new opportunities in this vibrant city and further develop my skills in the field.
                     <br />
                     <br />
-                    During my Bachelor's degree at the University of Calgary, I pursued Economics as my major. However, a single class in Computer Science opened my eyes to the potential of programming, inspiring me to complete a minor in the field. After graduation, I realized that I wanted to enhance my programming skills and decided to pursue a career in software development. It is this drive that led me to my current role as a developer at SafeCode, where I utilize my programming to create innovative solutions for clients.
+                    During my Bachelor's degree at the University of Calgary, I pursued Economics as my major. However, a single class in Computer Science opened my eyes to the potential of programming, inspiring me to complete a minor in the field. After graduation, I realized that I wanted to enhance my programming skills and decided to pursue a career in software development. It is this drive that led me to my current role as a developer at Revium, where I utilize my programming to create innovative solutions for clients.
                 </p>
+            </div>
+            <div>
                 <hr />
                 <div className={styles.experience_title}>
                     <div className={styles.title}>
                         <h4 >Tech Stack</h4>
                         <div className={styles.languages}>
+                            <div className={clsx(styles.tech, styles.one)}>C#</div>
                             <div className={clsx(styles.tech, styles.one)}>.NET Core</div>
                             <div className={clsx(styles.tech, styles.one)}>.NET Framework</div>
-                            <div className={clsx(styles.tech, styles.one)}>C#</div>
                             <div className={clsx(styles.tech, styles.one)}>REST API</div>
                             <div className={clsx(styles.tech, styles.one)}>Blazor</div>
                             <div className={clsx(styles.tech, styles.one)}>SQL</div>
                             <div className={clsx(styles.tech, styles.one)}>CSS</div>
                             <div className={clsx(styles.tech, styles.one)}>Git</div>
                             <div className={clsx(styles.tech, styles.one)}>Azure</div>
+                            <div className={clsx(styles.tech, styles.one)}>Java</div>
                             <div className={clsx(styles.tech, styles.two)}>TypeScript</div>
                             <div className={clsx(styles.tech, styles.two)}>React</div>
                             <div className={clsx(styles.tech, styles.two)}>Node.js</div>
                             <div className={clsx(styles.tech, styles.two)}>AI</div>
-                            <div className={clsx(styles.tech, styles.three)}>Java</div>
+                            <div className={clsx(styles.tech, styles.three)}>Rust</div>
+                            <div className={clsx(styles.tech, styles.three)}>Azure AI Development</div>
                         </div>
                         <div className={clsx(styles.tech, styles.Proficient)}>Proficient</div>
                         <div className={clsx(styles.tech, styles.Competent)}>Competent</div>
-                        <div className={clsx(styles.tech, styles.learning)}>Working on it</div>
+                        <div className={clsx(styles.tech, styles.learning)}>Currently Learning</div>
                     </div>
                     <div>
                         <h1 className={styles.title}>Experience</h1>
