@@ -11,7 +11,7 @@ function Toolbars() {
         <>
             <div className={clsx(styles.toolbar, styles.left)}>
                 <div className={styles.toolbar__icons} >
-                    <a href={"../JS Resume.pdf"} target="_blank">
+                    <a href={"../Resume.pdf"} target="_blank">
                         <FileEarmark size={24} />
                     </a>
                     <a href="https://github.com/smuthbudda?tab=repositories" target="_blank">

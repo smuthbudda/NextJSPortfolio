@@ -46,7 +46,7 @@ const Navbar = () => {
                 {button}
             </div>
             <div className={clsx(styles.nav_side, navActive ? styles.active : styles.inactive)}>
-                <JordanButton title="CV" link={"../JordanSResume.pdf"} />
+                <JordanButton title="CV" link={"../Resume.pdf"} />
                 <ThemeToggle />
                 <div className={styles.socialMedia}>
                     <a href="https://github.com/smuthbudda?tab=repositories" target="_blank">
